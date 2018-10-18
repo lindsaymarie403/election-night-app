@@ -14,14 +14,12 @@
 }
 
 #subtitle {
-  font-family: 'Poppins';
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 15px;
 }
 
 #byline {
-  font-family: 'Poppins';
   font-size: 13px;
   font-weight: 400;
 }
@@ -34,6 +32,79 @@
   width: 100%;
 }
 
+#legend-image {
+  margin: 10px 0px 10px 0px;
+}
+
 #legend {
-  
+  text-align: center;
+  font-size: 13px;
+  margin-bottom: 50px;
+}
+
+#winner {
+  background-color: #d3d3d3;
+  padding: 5px;
+}
+
+#pct {
+  background-color: #d3d3d3;
+  padding: 5px;
+}
+
+#table {
+  font-size: 12px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.table-row {
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.cell {
+  float: left;
+  padding: 5px 0px 5px 0px;
+}
+
+.head-row {
+  font-weight: 700;
+}
+
+#candidates-row {
+  border-bottom: none;
+}
+
+.candidates {
+  text-transform: uppercase;
+}
+
+/*media queries*/
+@media (min-width: 768px) {
+  #map {
+    position: relative;
+  }
+  #legend {
+    position: absolute;
+    margin-bottom: 0px;
+    bottom: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  #map {
+    padding-top: 30px;
+  }
+  #legend {
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #title, #subtitle, #byline {
+    text-align: center;
+  }
+  #table {
+    font-size: 11px;
+  }
 }
