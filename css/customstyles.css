@@ -1,0 +1,39 @@
+#header {
+  width: 100%;
+  height: 15px;
+  background-color: #d3d3d3;
+  margin-bottom: 40px;
+}
+
+#title {
+  font-family: 'Droid Serif';
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2em;
+  margin-bottom: 5px;
+}
+
+#subtitle {
+  font-family: 'Poppins';
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+#byline {
+  font-family: 'Poppins';
+  font-size: 13px;
+  font-weight: 400;
+}
+
+#map {
+  padding-top: 80px;
+}
+
+#map-image, #legend-image {
+  width: 100%;
+}
+
+#legend {
+  
+}
