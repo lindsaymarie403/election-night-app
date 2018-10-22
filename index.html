@@ -12,6 +12,10 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/customstyles.css" rel="stylesheet">
 
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="js/map.js"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400i,700,700i|Poppins:300,400,500,600,700&amp;subset=latin-ext" rel="stylesheet">
 
   </head>
@@ -38,10 +42,10 @@
          <div class="col-sm-10 offset-sm-1" id="map-wrapper">
            <img src="assets/state.png" id="map-image"/>
            <div id="svg-box" class="col-12">
-             <svg width="100%" height="100%">
+             <svg id="map-svg" width="100%" height="100%">
 
                <text x="7%" y="8%">Garrett</text>
-               <circle cx="7%" cy="8%" r="2" stroke-width="3" fill="black" />
+               <circle id="garrett" cx="7%" cy="8%" r="2" stroke-width="3" fill="black" />
 
                <text x="18%" y="6%">Allegany</text>
                <circle cx="18%" cy="6%" r="2" stroke-width="3" fill="black" />
@@ -336,6 +340,35 @@
 
      </div>
 
+     <script>
+
+     var url= 'https://elections.maryland.gov/elections/results_data/GG18/Results.js';
+             $.ajax({
+                 url: url,
+                 crossOrigin: true,
+                 type: 'GET',
+                 dataType: 'JSONP',
+                 jsonpCallback: 'callback',
+                 xhrFields: { withCredentials: true },
+                 accept: 'application/json'
+             }).done(function (data) {
+                 alert(data);
+             }).fail(function (xhr, textStatus, error) {
+                 var title, message;
+                 switch (xhr.status) {
+                     case 403:
+                         title = xhr.responseJSON.errorSummary;
+                         message = 'Please login to your server before running the test.';
+                         break;
+                     default:
+                         title = 'Invalid URL or Cross-Origin Request Blocked';
+                         message = 'You must explictly add this site (' + window.location.origin + ') to the list of allowed websites in your server.';
+                         break;
+                 }
+             });
+
+     </script>
+
      <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -345,8 +378,6 @@
     <!--This is the core boostrap javascript file this is the original, but we need to correct the path-->
     <script src="js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-    <!--lightbox script-->
-    <script src="js/lightbox/lightbox-plus-jquery.js"></script>
+    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
   </body>
 </html>
