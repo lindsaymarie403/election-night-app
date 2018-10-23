@@ -1,17 +1,25 @@
-/*
+
 var svg = d3.select('#map-svg')
 
-d3.json("https://elections.maryland.gov/elections/results_data/GG18/Results.js", function(error, data) {
+d3.json("data.json", function(error, data) {
 
     data.forEach(function(d) {
-        d.Results = d.Results;
-        d.DReporting = d.DReporting;
-        d.Reporting = d.Reporting;
-        d.EVReporting = d.EVReporting;
-        d.CanvasCounts = d.CanvasCounts;
+        d[0] = d.candidate;
+        d[1] = d.jurisdiction;
+        d[2] = d.district;
+        d[3] = +d.votes;
     });
 
-    console.log(d.Results);
+    svg.select("#garrett")
+      //.data(data)
+      .attr("r", "12");
+
+        /*    svg.select("#garrett")
+              .data(data)
+              .attr("r", function(d) {
+                if (d.jurisdiction == '12') {
+                  return d.votes; }
+                });
+                */
 
   });
-*/

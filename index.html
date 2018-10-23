@@ -341,31 +341,42 @@
      </div>
 
      <script>
-
-     var url= 'https://elections.maryland.gov/elections/results_data/GG18/Results.js';
+/*
+     var url= 'data.json';
              $.ajax({
                  url: url,
                  crossOrigin: true,
                  type: 'GET',
-                 dataType: 'JSONP',
-                 jsonpCallback: 'callback',
+                 dataType: 'JSON',
+                 jsonp: 'jsonp_callback',
                  xhrFields: { withCredentials: true },
-                 accept: 'application/json'
-             }).done(function (data) {
-                 alert(data);
-             }).fail(function (xhr, textStatus, error) {
-                 var title, message;
-                 switch (xhr.status) {
-                     case 403:
-                         title = xhr.responseJSON.errorSummary;
-                         message = 'Please login to your server before running the test.';
-                         break;
-                     default:
-                         title = 'Invalid URL or Cross-Origin Request Blocked';
-                         message = 'You must explictly add this site (' + window.location.origin + ') to the list of allowed websites in your server.';
-                         break;
+                 success: function(data) {
+                   console.log(data);
                  }
              });
+*/
+
+
+      var svg = d3.select('#map-svg')
+
+      d3.json("data.json", function(error, data) {
+
+        console.log(data);
+
+          data.forEach(function(d) {
+              d[0] = d.candidate;
+              d[1] = d.jurisdiction;
+              d[2] = d.district;
+              d[3] = +d.votes;
+          });
+
+          svg.select("#garrett")
+              .data(data)
+              .attr("r", function(d) {
+                if (d.jurisdiction == '12') {
+                  return d.votes; }
+                });
+        });
 
      </script>
 
