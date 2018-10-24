@@ -1,4 +1,4 @@
-
+/*
 var svg = d3.select('#map-svg')
 
 d3.json("data.json", function(error, data) {
@@ -11,15 +11,11 @@ d3.json("data.json", function(error, data) {
     });
 
     svg.select("#garrett")
-      //.data(data)
-      .attr("r", "12");
-
-        /*    svg.select("#garrett")
-              .data(data)
-              .attr("r", function(d) {
-                if (d.jurisdiction == '12') {
-                  return d.votes; }
-                });
-                */
+      .data(data)
+      .attr("r", function(d) {
+        if (d.jurisdiction == '12' && d.district == '2') {
+          return d.votes; }
+        });
 
   });
+*/

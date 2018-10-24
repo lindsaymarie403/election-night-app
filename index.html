@@ -359,24 +359,23 @@
 
       var svg = d3.select('#map-svg')
 
-      d3.json("data.json", function(error, data) {
+      d3.json("Results.js", function(error, data) {
 
-        console.log(data);
-
-          data.forEach(function(d) {
-              d[0] = d.candidate;
-              d[1] = d.jurisdiction;
-              d[2] = d.district;
-              d[3] = +d.votes;
-          });
-
-          svg.select("#garrett")
-              .data(data)
-              .attr("r", function(d) {
-                if (d.jurisdiction == '12') {
-                  return d.votes; }
-                });
+        data.Results.forEach(function(d) {
+          d.candidate = d[0];
+          d.jurisdiction = d[1];
+          d.district = d[2];
+          d.votes = d[3];
         });
+
+        svg.select("#garrett")
+            .data(data.Results)
+            .attr("r", function(d) {
+              if (d.candidate == '12803' && d.jurisdiction == '12' && d.district == '2') {
+                return d.votes; }
+              });
+
+      });
 
      </script>
 
