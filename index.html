@@ -42,80 +42,84 @@
          <div class="col-sm-10 offset-sm-1" id="map-wrapper">
            <img src="assets/state.png" id="map-image"/>
            <div id="svg-box" class="col-12">
-             <svg id="map-svg">
-               <!--<svg id="map-svg" width="100%" height="100%">-->
+              <!--<svg id="map-svg" width="950px" height="100%">-->
+              <svg id="map-svg" width="100%" height="100%">
 
+               <circle id="garrett" cx="7%" cy="8%" r="2" stroke-width="3" />
                <text x="7%" y="8%">Garrett</text>
-               <circle id="garrett" cx="7%" cy="8%" r="2" stroke-width="3" fill="black" />
 
+               <circle id="allegany" cx="18%" cy="6%" r="2" stroke-width="3" />
                <text x="18%" y="6%">Allegany</text>
-               <circle cx="18%" cy="6%" r="2" stroke-width="3" fill="black" />
 
+               <circle id="washington" cx="38%" cy="6%" r="2" stroke-width="3" />
                <text x="38%" y="6%">Washington</text>
-               <circle cx="38%" cy="6%" r="2" stroke-width="3" fill="black" />
 
+               <circle id="frederick" cx="45%" cy="11%" r="2" stroke-width="3" />
                <text x="45%" y="11%">Frederick</text>
-               <circle cx="45%" cy="11%" r="2" stroke-width="3" fill="black" />
 
+               <circle id="montgomery" cx="46%" cy="32%" r="2" stroke-width="3" />
                <text x="46%" y="32%">Montgomery</text>
-               <circle cx="46%" cy="32%" r="2" stroke-width="3" fill="black" />
 
+               <circle id="carroll" cx="52%" cy="5%" r="2" stroke-width="3" />
                <text x="52%" y="5%">Carroll</text>
-               <circle cx="52%" cy="5%" r="2" stroke-width="3" fill="black" />
 
+               <circle id="howard" cx="55%" cy="25%" r="2" stroke-width="3" />
                <text x="55%" y="25%">Howard</text>
-               <circle cx="55%" cy="25%" r="2" stroke-width="3" fill="black" />
 
-               <text x="61%" y="8%">Baltimore County</text>
-               <circle cx="61%" cy="8%" r="2" stroke-width="3" fill="black" />
+               <circle id="baltcounty" cx="61%" cy="8%" r="2" stroke-width="3" />
+               <text x="61%" y="7%">Baltimore</text>
+               <text x="61%" y="10%">County</text>
 
-               <text x="63%" y="24%">Baltimore City</text>
-               <circle cx="63%" cy="24%" r="2" stroke-width="3" fill="black" />
+               <circle id="baltcity" cx="63%" cy="24%" r="2" stroke-width="3" />
+               <text x="63%" y="23%">Baltimore</text>
+               <text x="63%" y="26%">City</text>
 
+               <circle id="harford" cx="70%" cy="10%" r="2" stroke-width="3" />
                <text x="70%" y="10%">Harford</text>
-               <circle cx="70%" cy="10%" r="2" stroke-width="3" fill="black" />
 
-               <text x="79%" y="6%">Cecil</text>
-               <circle cx="79%" cy="6%" r="2" stroke-width="3" fill="black" />
+               <circle id="cecil" cx="77%" cy="6%" r="2" stroke-width="3" />
+               <text x="77%" y="6%">Cecil</text>
 
-               <text x="55%" y="54%">Prince George's</text>
-               <circle cx="55%" cy="54%" r="2" stroke-width="3" fill="black" />
+               <circle id="pg" cx="55%" cy="54%" r="2" stroke-width="3" />
+               <text x="55%" y="53%">Prince</text>
+               <text x="55%" y="56%">George's</text>
 
-               <text x="64%" y="38%">Anne Arundel</text>
-               <circle cx="64%" cy="38%" r="2" stroke-width="3" fill="black" />
+               <circle id="annearundel" cx="64%" cy="38%" r="2" stroke-width="3" />
+               <text x="64%" y="37%">Anne</text>
+               <text x="64%" y="40%">Arundel</text>
 
-               <text x="51%" y="70%">Charles</text>
-               <circle cx="51%" cy="70%" r="2" stroke-width="3" fill="black" />
+               <circle id="charles" cx="52%" cy="70%" r="2" stroke-width="3" />
+               <text x="52%" y="70%">Charles</text>
 
+               <circle id="calvert" cx="63%" cy="67%" r="2" stroke-width="3" />
                <text x="63%" y="67%">Calvert</text>
-               <circle cx="63%" cy="67%" r="2" stroke-width="3" fill="black" />
 
+               <circle id="stmary" cx="62%" cy="79%" r="2" stroke-width="3" />
                <text x="62%" y="79%">St. Mary's</text>
-               <circle cx="62%" cy="79%" r="2" stroke-width="3" fill="black" />
 
-               <text x="78%" y="24%">Kent</text>
-               <circle cx="78%" cy="24%" r="2" stroke-width="3" fill="black" />
+               <circle id="kent" cx="76%" cy="24%" r="2" stroke-width="3" />
+               <text x="76%" y="24%">Kent</text>
 
+               <circle id="queenanne" cx="77%" cy="34%" r="2" stroke-width="3" />
                <text x="77%" y="34%">Queen Anne's</text>
-               <circle cx="77%" cy="34%" r="2" stroke-width="3" fill="black" />
 
-               <text x="80%" y="44%">Caroline</text>
-               <circle cx="80%" cy="44%" r="2" stroke-width="3" fill="black" />
+               <circle id="caroline" cx="79%" cy="44%" r="2" stroke-width="3" />
+               <text x="79%" y="44%">Caroline</text>
 
+               <circle id="talbot" cx="75%" cy="50%" r="2" stroke-width="3" />
                <text x="75%" y="50%">Talbot</text>
-               <circle cx="75%" cy="50%" r="2" stroke-width="3" fill="black" />
 
+               <circle id="dorchester" cx="78%" cy="68%" r="2" stroke-width="3" />
                <text x="78%" y="68%">Dorchester</text>
-               <circle cx="78%" cy="68%" r="2" stroke-width="3" fill="black" />
 
+               <circle id="wicomico" cx="86%" cy="74%" r="2" stroke-width="3" />
                <text x="86%" y="74%">Wicomico</text>
-               <circle cx="86%" cy="74%" r="2" stroke-width="3" fill="black" />
 
-               <text x="83%" y="88%">Somerset</text>
-               <circle cx="83%" cy="88%" r="2" stroke-width="3" fill="black" />
+               <circle id="somerset" cx="81%" cy="88%" r="2" stroke-width="3" />
+               <text x="81%" y="88%">Somerset</text>
 
+               <circle id="worcester" cx="90%" cy="84%" r="2" stroke-width="3" />
                <text x="90%" y="84%">Worcester</text>
-               <circle cx="90%" cy="84%" r="2" stroke-width="3" fill="black" />
 
              </svg>
           </div>
@@ -135,12 +139,20 @@
            <div class="col-1 cell"></div>
          </div>
          <div class="col-sm-10 offset-sm-1 col-12 table-row head-row">
-           <div class="col-3 cell">County</div>
+           <div class="col-3 cell">Jurisdiction</div>
            <div class="col-2 cell">Votes</div>
            <div class="col-2 cell">Percent</div>
            <div class="col-2 cell">Votes</div>
            <div class="col-2 cell">Percent</div>
            <div class="col-1 cell">Precincts Reporting</div>
+         </div>
+         <div class="col-sm-10 offset-sm-1 col-12 table-row" id="state">
+           <div class="col-3 cell">Statewide</div>
+           <div class="col-2 cell">0</div>
+           <div class="col-2 cell">0.0%</div>
+           <div class="col-2 cell">0</div>
+           <div class="col-2 cell">0.0%</div>
+           <div class="col-1 cell">0</div>
          </div>
          <div class="col-sm-10 offset-sm-1 col-12 table-row">
            <div class="col-3 cell">Allegany</div>
@@ -341,101 +353,6 @@
 
      </div>
 
-     <script>
-/*
-     var url= 'data.json';
-             $.ajax({
-                 url: url,
-                 crossOrigin: true,
-                 type: 'GET',
-                 dataType: 'JSON',
-                 jsonp: 'jsonp_callback',
-                 xhrFields: { withCredentials: true },
-                 success: function(data) {
-                   console.log(data);
-                 }
-             });
-*/
-
-      var margin = {top: 0, right: 0, bottom: 0, left: 0},
-          width = 950 - margin.left - margin.right,
-          height = 450 - margin.top - margin.bottom;
-
-      var svg = d3.select('#map-svg')
-        .attr('width', width + margin.left + margin.right)
-        .attr('height', height + margin.top + margin.bottom);
-
-      d3.json("Results.js", function(error, data) {
-
-        var subset = data.Results.filter(function(d) { return d[2] == '2' && d[0] == '12803' || d[2] == '2' && d[0] == '12804'; });
-/*
-        subset.forEach(function(d) {
-          d.candidate = d[0];
-          d.jurisdiction = d[1];
-          d.district = d[2];
-          d.votes = d[3];
-        });
-*/
-        var allegany_votes = subset.filter(function(d) { return d[1] == '1'});
-
-        var annearundel_votes = subset.filter(function(d) { return d[1] == '2'});
-
-        var baltcity_votes = subset.filter(function(d) { return d[1] == '3'});
-
-        var baltcounty_votes = subset.filter(function(d) { return d[1] == '4'});
-
-        var calvert_votes = subset.filter(function(d) { return d[1] == '5'});
-
-        var caroline_votes = subset.filter(function(d) { return d[1] == '6'});
-
-        var carroll_votes = subset.filter(function(d) { return d[1] == '7'});
-
-        var cecil_votes = subset.filter(function(d) { return d[1] == '8'});
-
-        var charles_votes = subset.filter(function(d) { return d[1] == '9'});
-
-        var dorchester_votes = subset.filter(function(d) { return d[1] == '10'});
-
-        var frederick_votes = subset.filter(function(d) { return d[1] == '11'});
-
-        var garrett_votes = subset.filter(function(d) { return d[1] == '12'});
-
-        var harford_votes = subset.filter(function(d) { return d[1] == '13'});
-
-        var howard_votes = subset.filter(function(d) { return d[1] == '14'});
-
-        var kent_votes = subset.filter(function(d) { return d[1] == '15'});
-
-        var montgomery_votes = subset.filter(function(d) { return d[1] == '16'});
-
-        var pg_votes = subset.filter(function(d) { return d[1] == '17'});
-
-        var queenanne_votes = subset.filter(function(d) { return d[1] == '18'});
-
-        var stmary_votes = subset.filter(function(d) { return d[1] == '19'});
-
-        var somerset_votes = subset.filter(function(d) { return d[1] == '20'});
-
-        var talbot_votes = subset.filter(function(d) { return d[1] == '21'});
-
-        var washington_votes = subset.filter(function(d) { return d[1] == '22'});
-
-        var wicomico_votes = subset.filter(function(d) { return d[1] == '23'});
-
-        var worcester_votes = subset.filter(function(d) { return d[1] == '24'});
-
-        //console.log(garrett_votes[0][3] + garrett_votes[1][3]);
-
-        svg.select("#garrett")
-            .data(subset)
-            .attr("r", garrett_votes[0][3] + garrett_votes[1][3]);
-
-
-
-      });
-
-     </script>
-
      <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -446,5 +363,9 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+
+    <!--LINK TO MY JS FOR GRAPHIC-->
+    <script src="js/map.js"></script>
+
   </body>
 </html>
