@@ -367,19 +367,70 @@
 
       d3.json("Results.js", function(error, data) {
 
-        data.Results.forEach(function(d) {
+        var subset = data.Results.filter(function(d) { return d[2] == '2' && d[0] == '12803' || d[2] == '2' && d[0] == '12804'; });
+/*
+        subset.forEach(function(d) {
           d.candidate = d[0];
           d.jurisdiction = d[1];
           d.district = d[2];
           d.votes = d[3];
         });
+*/
+        var allegany_votes = subset.filter(function(d) { return d[1] == '1'});
+
+        var annearundel_votes = subset.filter(function(d) { return d[1] == '2'});
+
+        var baltcity_votes = subset.filter(function(d) { return d[1] == '3'});
+
+        var baltcounty_votes = subset.filter(function(d) { return d[1] == '4'});
+
+        var calvert_votes = subset.filter(function(d) { return d[1] == '5'});
+
+        var caroline_votes = subset.filter(function(d) { return d[1] == '6'});
+
+        var carroll_votes = subset.filter(function(d) { return d[1] == '7'});
+
+        var cecil_votes = subset.filter(function(d) { return d[1] == '8'});
+
+        var charles_votes = subset.filter(function(d) { return d[1] == '9'});
+
+        var dorchester_votes = subset.filter(function(d) { return d[1] == '10'});
+
+        var frederick_votes = subset.filter(function(d) { return d[1] == '11'});
+
+        var garrett_votes = subset.filter(function(d) { return d[1] == '12'});
+
+        var harford_votes = subset.filter(function(d) { return d[1] == '13'});
+
+        var howard_votes = subset.filter(function(d) { return d[1] == '14'});
+
+        var kent_votes = subset.filter(function(d) { return d[1] == '15'});
+
+        var montgomery_votes = subset.filter(function(d) { return d[1] == '16'});
+
+        var pg_votes = subset.filter(function(d) { return d[1] == '17'});
+
+        var queenanne_votes = subset.filter(function(d) { return d[1] == '18'});
+
+        var stmary_votes = subset.filter(function(d) { return d[1] == '19'});
+
+        var somerset_votes = subset.filter(function(d) { return d[1] == '20'});
+
+        var talbot_votes = subset.filter(function(d) { return d[1] == '21'});
+
+        var washington_votes = subset.filter(function(d) { return d[1] == '22'});
+
+        var wicomico_votes = subset.filter(function(d) { return d[1] == '23'});
+
+        var worcester_votes = subset.filter(function(d) { return d[1] == '24'});
+
+        //console.log(garrett_votes[0][3] + garrett_votes[1][3]);
 
         svg.select("#garrett")
-            .data(data.Results)
-            .attr("r", function(d) {
-              if (d.candidate == '12803' && d.jurisdiction == '12' && d.district == '2') {
-                return d.votes; }
-              });
+            .data(subset)
+            .attr("r", garrett_votes[0][3] + garrett_votes[1][3]);
+
+
 
       });
 
