@@ -1,5 +1,5 @@
 
-var margin = {top: 50, right: 20, bottom: 20, left: 150},
+var margin = {top: 50, right: 35, bottom: 20, left: 150},
     width = 600 - margin.left - margin.right,
     height = 730 - margin.top - margin.bottom;
 
@@ -130,3 +130,45 @@ d3.csv("data.csv", function(error, data) {
       .attr("fill", "#4b4c99");
 
 });
+
+
+document.addEventListener("DOMContentLoaded", resize);
+d3.select(window).on('resize', resize);
+
+function resize() {
+	console.log('----resize function----');
+
+  width = parseInt(d3.select('#chart').style("width"), 10);
+  width = width - margin.left - margin.right;
+	console.log('----resize width----'+width);
+
+  x.rangeRound([0, width]);
+
+  d3.select(svg.node().parentNode)
+      .attr('width', (width + margin.left + margin.right) + 'px');
+
+  d3.select('svg')
+      .attr('width', (width + margin.left + margin.right) + 'px');
+
+  svg.selectAll("rect")
+      .attr("width", margin.left + width + margin.right);
+
+  svg.selectAll(".x-axis")
+      .call(d3.axisTop(x).tickValues([25,50,75]).tickSize(-height).tickPadding(15).tickFormat(d => d + "%"))
+      .select(".domain")
+        .remove();
+
+  svg.selectAll(".line")
+      .attr("x1", function(d) { return x(d.jealous)})
+      .attr("x2", function(d) { return x(d.hogan)});
+
+  svg.selectAll(".hogan-dot")
+     .attr("cx", function(d) { return x(d.hogan)})
+     .attr("cy", function(d) { return y(d.rank)});
+
+   svg.selectAll(".jealous-dot")
+      .attr("cx", function(d) { return x(d.jealous)})
+      .attr("cy", function(d) { return y(d.rank)});
+
+
+};
