@@ -93,12 +93,35 @@ d3.csv("data.csv", function(error, data) {
   svg.selectAll(".dates")
      .data(data)
    .enter().append("text") // Uses the enter().append() method
+   .filter(function (d, i) { return i != 0 && i != 12;})
      .attr("class", "dates") // Assign a class for styling
      .attr("x", -margin.left + 10)
      .attr("y", function(d) { return y(d.rank)})
      .text( function(d) { return d.date } )
      .style("font-family","Poppins")
      .style("font-size", "12px");
+
+   svg.selectAll(".dates-2018")
+      .data(data)
+    .enter().append("text") // Uses the enter().append() method
+    .filter(function (d, i) { return i === 0;})
+      .attr("class", "dates") // Assign a class for styling
+      .attr("x", -margin.left + 10)
+      .attr("y", function(d) { return y(d.rank)})
+      .text( function(d) { return d.date + ", 2018" } )
+      .style("font-family","Poppins")
+      .style("font-size", "12px");
+
+    svg.selectAll(".dates-2017")
+       .data(data)
+     .enter().append("text") // Uses the enter().append() method
+     .filter(function (d, i) { return i === 12;})
+       .attr("class", "dates") // Assign a class for styling
+       .attr("x", -margin.left + 10)
+       .attr("y", function(d) { return y(d.rank)})
+       .text( function(d) { return d.date + ", 2017" } )
+       .style("font-family","Poppins")
+       .style("font-size", "12px");
 
   svg.selectAll(".line")
      .data(data)
@@ -109,7 +132,7 @@ d3.csv("data.csv", function(error, data) {
      .attr("x2", function(d) { return x(d.hogan)})
      .attr("y2", function(d) { return y(d.rank)})
      .style("stroke", "#969696")
-     .style("stroke-width", "2");
+     .style("stroke-width", "3");
 
   svg.selectAll(".hogan-dot")
      .data(data)
@@ -117,8 +140,56 @@ d3.csv("data.csv", function(error, data) {
      .attr("class", "hogan-dot") // Assign a class for styling
      .attr("cx", function(d) { return x(d.hogan)})
      .attr("cy", function(d) { return y(d.rank)})
-     .attr("r", 6)
+     .attr("r", 7)
      .attr("fill", "#f04b4d");
+
+   svg.selectAll(".hogan-img")
+      .data(data)
+    .enter().append("image")
+    .attr("class", "hogan-img")
+    .filter(function (d, i) { return i === 0;})
+    .attr("xlink:href", "assets/hogan.png")
+    .attr("x", function(d) { return x(d.hogan) - 20})
+    .attr("y", function(d) { return y(d.rank) - 20})
+    .attr("width", "40")
+    .attr("height", "40");
+
+  svg.selectAll(".hogan-first-name")
+     .data(data)
+   .enter().append("text") // Uses the enter().append() method
+     .attr("class", "hogan-first-name") // Assign a class for styling
+     .filter(function (d, i) { return i === 0;})
+     .attr("x",function(d) { return x(d.hogan) + 25 })
+     .attr("y", function(d) { return y(d.rank) - 3})
+     .text("Hogan")
+     .style("text-anchor", "start")
+     .style("font-family","Poppins")
+     .style("font-size", "10px")
+     .style("font-weight", "600");
+
+   svg.selectAll(".hogan-first-num")
+      .data(data)
+    .enter().append("text") // Uses the enter().append() method
+      .attr("class", "hogan-first-num") // Assign a class for styling
+      .filter(function (d, i) { return i === 0;})
+      .attr("x",function(d) { return x(d.hogan) + 25 })
+      .attr("y", function(d) { return y(d.rank) + 10})
+      .text( function(d) { return d.hogan + "%"} )
+      .style("text-anchor", "start")
+      .style("font-family","Poppins")
+      .style("font-size", "10px");
+
+  svg.selectAll(".hogan-labels")
+     .data(data)
+   .enter().append("text") // Uses the enter().append() method
+     .attr("class", "hogan-labels") // Assign a class for styling
+     .filter(function (d, i) { return i > 0;})
+     .attr("x",function(d) { return x(d.hogan) + 15 })
+     .attr("y", function(d) { return y(d.rank) + 5})
+     .text( function(d) { return d.hogan} )
+     .style("text-anchor", "start")
+     .style("font-family","Poppins")
+     .style("font-size", "10px");
 
    svg.selectAll(".jealous-dot")
       .data(data)
@@ -126,8 +197,56 @@ d3.csv("data.csv", function(error, data) {
       .attr("class", "jealous-dot") // Assign a class for styling
       .attr("cx", function(d) { return x(d.jealous)})
       .attr("cy", function(d) { return y(d.rank)})
-      .attr("r", 6)
+      .attr("r", 7)
       .attr("fill", "#4b4c99");
+
+    svg.selectAll(".jealous-img")
+       .data(data)
+     .enter().append("image")
+     .attr("class", "jealous-img")
+     .filter(function (d, i) { return i === 0;})
+     .attr("xlink:href", "assets/jealous.png")
+     .attr("x", function(d) { return x(d.jealous) - 20})
+     .attr("y", function(d) { return y(d.rank) - 20})
+     .attr("width", "40")
+     .attr("height", "40");
+
+   svg.selectAll(".jealous-first-name")
+      .data(data)
+    .enter().append("text") // Uses the enter().append() method
+      .attr("class", "jealous-first-name") // Assign a class for styling
+      .filter(function (d, i) { return i === 0;})
+      .attr("x",function(d) { return x(d.jealous) - 25 })
+      .attr("y", function(d) { return y(d.rank) - 3})
+      .text("Jealous")
+      .style("text-anchor", "end")
+      .style("font-family","Poppins")
+      .style("font-size", "10px")
+      .style("font-weight", "600");
+
+    svg.selectAll(".jealous-first-num")
+       .data(data)
+     .enter().append("text") // Uses the enter().append() method
+       .attr("class", "jealous-first-num") // Assign a class for styling
+       .filter(function (d, i) { return i === 0;})
+       .attr("x",function(d) { return x(d.jealous) - 25 })
+       .attr("y", function(d) { return y(d.rank) + 10})
+       .text( function(d) { return d.jealous + "%"} )
+       .style("text-anchor", "end")
+       .style("font-family","Poppins")
+       .style("font-size", "10px");
+
+    svg.selectAll(".jealous-labels")
+       .data(data)
+     .enter().append("text") // Uses the enter().append() method
+       .attr("class", "jealous-labels") // Assign a class for styling
+       .filter(function (d, i) { return i > 0;})
+       .attr("x",function(d) { return x(d.jealous) - 15 })
+       .attr("y", function(d) { return y(d.rank) + 5})
+       .text( function(d) { return d.jealous} )
+       .style("text-anchor", "end")
+       .style("font-family","Poppins")
+       .style("font-size", "10px");
 
 });
 
@@ -169,6 +288,34 @@ function resize() {
    svg.selectAll(".jealous-dot")
       .attr("cx", function(d) { return x(d.jealous)})
       .attr("cy", function(d) { return y(d.rank)});
+
+    svg.selectAll(".hogan-img")
+     .attr("x", function(d) { return x(d.hogan) - 20});
+
+   svg.selectAll(".hogan-first-name")
+      .attr("x",function(d) { return x(d.hogan) + 25 });
+
+    svg.selectAll(".hogan-first-num")
+       .attr("x",function(d) { return x(d.hogan) + 25 });
+
+   svg.selectAll(".hogan-labels")
+      .attr("x",function(d) { return x(d.hogan) + 15 });
+
+    svg.selectAll(".jealous-dot")
+       .attr("cx", function(d) { return x(d.jealous)});
+
+     svg.selectAll(".jealous-img")
+      .attr("x", function(d) { return x(d.jealous) - 20});
+
+    svg.selectAll(".jealous-first-name")
+       .attr("x",function(d) { return x(d.jealous) - 25 });
+
+     svg.selectAll(".jealous-first-num")
+        .attr("x",function(d) { return x(d.jealous) - 25 });
+
+     svg.selectAll(".jealous-labels")
+        .attr("x",function(d) { return x(d.jealous) - 15 });
+
 
 
 };
