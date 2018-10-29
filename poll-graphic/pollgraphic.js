@@ -1,7 +1,7 @@
 
-var margin = {top: 50, right: 20, bottom: 30, left: 100},
+var margin = {top: 50, right: 20, bottom: 20, left: 150},
     width = 600 - margin.left - margin.right,
-    height = 900 - margin.top - margin.bottom;
+    height = 730 - margin.top - margin.bottom;
 
 var svg = d3.select("#chart").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -20,14 +20,14 @@ var y = d3.scaleTime()
 */
 
 var y = d3.scaleLinear()
-    .rangeRound([0, width]);
+    .rangeRound([25, height-30]);
 
 // load data
 d3.csv("data.csv", function(error, data) {
 
   data.forEach(function(d) {
     d.rank = +d.Rank;
-    d.date = parseTime(d.Date);
+    d.date = d.Date;
     d.hogan = +d.Hogan;
     d.jealous = +d.Jealous;
   });
@@ -35,6 +35,33 @@ d3.csv("data.csv", function(error, data) {
   x.domain([25,75]);
   y.domain([d3.min(data, function(d) { return d.rank; }), d3.max(data, function(d) { return d.rank; })]);
   //y.domain([d3.max(data, function(d) { return d.date; }), d3.min(data, function(d) { return d.date; })]);
+
+  svg.selectAll("rect")
+     .data(data)
+   .enter().append("rect") // Uses the enter().append() method
+     .attr("x", -margin.left)
+     .attr("y", function(d) { return y(d.rank) - 25})
+     .attr("width", margin.left + width + margin.right)
+     .attr("height", 50)
+     .style("fill", function(d) {
+           if (d.rank === 2) {
+             return "#f4f4f4";
+           } else if (d.rank === 4) {
+             return "#f4f4f4";
+           } else if (d.rank === 6) {
+             return "#f4f4f4";
+           } else if (d.rank === 8) {
+             return "#f4f4f4";
+           } else if (d.rank === 10) {
+             return "#f4f4f4";
+           } else if (d.rank === 12) {
+             return "#f4f4f4";
+           }
+           return "#fcfcfc";
+         });
+     //.style("fill", "#fcfcfc"); //alt with #f4f4f4
+
+
 
   svg.append("g")
       .attr("class", "x-axis")
@@ -49,17 +76,29 @@ d3.csv("data.csv", function(error, data) {
     .attr("class", "y-axis")
     .style("font-family","Poppins")
     .style("font-size", "12px")
-    .call(d3.axisLeft(y).ticks(0).tickSize(0).tickPadding(20))
+    .call(d3.axisLeft(y).ticks(0).tickSize(0).tickPadding(50))
     .select(".domain")
       .remove();
+
+  svg.selectAll("#date-label")
+     .data(data)
+   .enter().append("text") // Uses the enter().append() method
+     .attr("id", "date-label") // Assign a class for styling
+     .attr("x", -margin.left + 10)
+     .attr("y", -15)
+     .text("Poll Date")
+     .style("font-family","Poppins")
+     .style("font-size", "12px");
 
   svg.selectAll(".dates")
      .data(data)
    .enter().append("text") // Uses the enter().append() method
      .attr("class", "dates") // Assign a class for styling
-     .attr("x", -margin.left)
+     .attr("x", -margin.left + 10)
      .attr("y", function(d) { return y(d.rank)})
-     .text(function(d) { return y(d.date)});
+     .text( function(d) { return d.date } )
+     .style("font-family","Poppins")
+     .style("font-size", "12px");
 
   svg.selectAll(".line")
      .data(data)
