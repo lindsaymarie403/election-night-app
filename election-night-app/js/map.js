@@ -99,124 +99,122 @@ d3.json("Results.js", function(error, data) {
   // CHANGE SECOND INDECES TO 3 ON ELECTION NIGHT
   svg.select("#allegany")
       .data(subset)
-      .attr("r", sqrtScale(allegany_votes[0][0] + allegany_votes[1][0]))
+      .attr("r", sqrtScale(allegany_votes[0][3] + allegany_votes[1][3]))
       .attr("fill", circle_fill( allegany_votes[0][3] / (allegany_votes[0][3] + allegany_votes[1][3])));
 
   svg.select("#annearundel")
       .data(subset)
-      .attr("r", sqrtScale(annearundel_votes[0][0] + annearundel_votes[1][0]))
+      .attr("r", sqrtScale(annearundel_votes[0][3] + annearundel_votes[1][3]))
       .attr("fill", circle_fill( annearundel_votes[0][3] / (annearundel_votes[0][3] + annearundel_votes[1][3])));
 
   svg.select("#baltcity")
       .data(subset)
-      .attr("r", sqrtScale(baltcity_votes[0][0] + baltcity_votes[1][0]))
+      .attr("r", sqrtScale(baltcity_votes[0][3] + baltcity_votes[1][3]))
       .attr("fill", circle_fill( baltcity_votes[0][3] / (baltcity_votes[0][3] + baltcity_votes[1][3])));
 
   svg.select("#baltcounty")
       .data(subset)
-      .attr("r", sqrtScale(baltcounty_votes[0][0] + baltcounty_votes[1][0]))
+      .attr("r", sqrtScale(baltcounty_votes[0][3] + baltcounty_votes[1][3]))
       .attr("fill", circle_fill( baltcounty_votes[0][3] / (baltcounty_votes[0][3] + baltcounty_votes[1][3])));
 
   svg.select("#calvert")
       .data(subset)
-      .attr("r", sqrtScale(calvert_votes[0][0] + calvert_votes[1][0]))
+      .attr("r", sqrtScale(calvert_votes[0][3] + calvert_votes[1][3]))
       .attr("fill", circle_fill( calvert_votes[0][3] / (calvert_votes[0][3] + calvert_votes[1][3])));
 
   svg.select("#caroline")
       .data(subset)
-      .attr("r", sqrtScale(caroline_votes[0][0] + caroline_votes[1][0]))
+      .attr("r", sqrtScale(caroline_votes[0][3] + caroline_votes[1][3]))
       .attr("fill", circle_fill( caroline_votes[0][3] / (caroline_votes[0][3] + caroline_votes[1][3])));
 
   svg.select("#carroll")
       .data(subset)
-      .attr("r", sqrtScale(carroll_votes[0][0] + carroll_votes[1][0]))
+      .attr("r", sqrtScale(carroll_votes[0][3] + carroll_votes[1][3]))
       .attr("fill", circle_fill( carroll_votes[0][3] / (carroll_votes[0][3] + carroll_votes[1][3])));
 
   svg.select("#cecil")
       .data(subset)
-      .attr("r", sqrtScale(cecil_votes[0][0] + cecil_votes[1][0]))
+      .attr("r", sqrtScale(cecil_votes[0][3] + cecil_votes[1][3]))
       .attr("fill", circle_fill( cecil_votes[0][3] / (cecil_votes[0][3] + cecil_votes[1][3])));
 
   svg.select("#charles")
       .data(subset)
-      .attr("r", sqrtScale(charles_votes[0][0] + charles_votes[1][0]))
+      .attr("r", sqrtScale(charles_votes[0][3] + charles_votes[1][3]))
       .attr("fill", circle_fill( charles_votes[0][3] / (charles_votes[0][3] + charles_votes[1][3])));
 
   svg.select("#dorchester")
       .data(subset)
-      .attr("r", sqrtScale(dorchester_votes[0][0] + dorchester_votes[1][0]))
+      .attr("r", sqrtScale(dorchester_votes[0][3] + dorchester_votes[1][3]))
       .attr("fill", circle_fill( dorchester_votes[0][3] / (dorchester_votes[0][3] + dorchester_votes[1][3])));
 
   svg.select("#frederick")
       .data(subset)
-      .attr("r", sqrtScale(frederick_votes[0][0] + frederick_votes[1][0]))
+      .attr("r", sqrtScale(frederick_votes[0][3] + frederick_votes[1][3]))
       .attr("fill", circle_fill( frederick_votes[0][3] / (frederick_votes[0][3] + frederick_votes[1][3])));
 
   svg.select("#garrett")
       .data(subset)
-      .attr("r", sqrtScale(garrett_votes[0][0] + garrett_votes[1][0]))
+      .attr("r", sqrtScale(garrett_votes[0][3] + garrett_votes[1][3]))
       .attr("fill", circle_fill( garrett_votes[0][3] / (garrett_votes[0][3] + garrett_votes[1][3])));
 
   svg.select("#harford")
       .data(subset)
-      .attr("r", sqrtScale(harford_votes[0][0] + harford_votes[1][0]))
+      .attr("r", sqrtScale(harford_votes[0][3] + harford_votes[1][3]))
       .attr("fill", circle_fill( harford_votes[0][3] / (harford_votes[0][3] + harford_votes[1][3])));
 
   svg.select("#howard")
       .data(subset)
-      .attr("r", sqrtScale(howard_votes[0][0] + howard_votes[1][0]))
+      .attr("r", sqrtScale(howard_votes[0][3] + howard_votes[1][3]))
       .attr("fill", circle_fill( howard_votes[0][3] / (howard_votes[0][3] + howard_votes[1][3])));
 
   svg.select("#kent")
       .data(subset)
-      .attr("r", sqrtScale(kent_votes[0][0] + kent_votes[1][0]))
+      .attr("r", sqrtScale(kent_votes[0][3] + kent_votes[1][3]))
       .attr("fill", circle_fill( kent_votes[0][3] / (kent_votes[0][3] + kent_votes[1][3])));
 
   svg.select("#montgomery")
       .data(subset)
-      .attr("r", sqrtScale(300000))
-      //.attr("r", sqrtScale(montgomery_votes[0][0] + montgomery_votes[1][0]))
+      .attr("r", sqrtScale(montgomery_votes[0][3] + montgomery_votes[1][3]))
       .attr("fill", circle_fill( montgomery_votes[0][3] / (montgomery_votes[0][3] + montgomery_votes[1][3])));
 
   svg.select("#pg")
       .data(subset)
-      .attr("r", sqrtScale(pg_votes[0][0] + pg_votes[1][0]))
+      .attr("r", sqrtScale(pg_votes[0][3] + pg_votes[1][3]))
       .attr("fill", circle_fill( pg_votes[0][3] / (pg_votes[0][3] + pg_votes[1][3])));
 
   svg.select("#queenanne")
       .data(subset)
-      .attr("r", sqrtScale(queenanne_votes[0][0] + queenanne_votes[1][0]))
+      .attr("r", sqrtScale(queenanne_votes[0][3] + queenanne_votes[1][3]))
       .attr("fill", circle_fill( queenanne_votes[0][3] / (queenanne_votes[0][3] + queenanne_votes[1][3])));
 
   svg.select("#stmary")
       .data(subset)
-      .attr("r", sqrtScale(stmary_votes[0][0] + stmary_votes[1][0]))
+      .attr("r", sqrtScale(stmary_votes[0][3] + stmary_votes[1][3]))
       .attr("fill", circle_fill( stmary_votes[0][3] / (stmary_votes[0][3] + stmary_votes[1][3])));
 
   svg.select("#somerset")
       .data(subset)
-      .attr("r", sqrtScale(6000))
-      //.attr("r", sqrtScale(somerset_votes[0][0] + somerset_votes[1][0]))
+      .attr("r", sqrtScale(somerset_votes[0][3] + somerset_votes[1][3]))
       .attr("fill", circle_fill( somerset_votes[0][3] / (somerset_votes[0][3] + somerset_votes[1][3])));
 
   svg.select("#talbot")
       .data(subset)
-      .attr("r", sqrtScale(talbot_votes[0][0] + talbot_votes[1][0]))
+      .attr("r", sqrtScale(talbot_votes[0][3] + talbot_votes[1][3]))
       .attr("fill", circle_fill( talbot_votes[0][3] / (talbot_votes[0][3] + talbot_votes[1][3])));
 
   svg.select("#washington")
       .data(subset)
-      .attr("r", sqrtScale(washington_votes[0][0] + washington_votes[1][0]))
+      .attr("r", sqrtScale(washington_votes[0][3] + washington_votes[1][3]))
       .attr("fill", circle_fill( washington_votes[0][3] / (washington_votes[0][3] + washington_votes[1][3])));
 
   svg.select("#wicomico")
       .data(subset)
-      .attr("r", sqrtScale(wicomico_votes[0][0] + wicomico_votes[1][0]))
+      .attr("r", sqrtScale(wicomico_votes[0][3] + wicomico_votes[1][3]))
       .attr("fill", circle_fill( wicomico_votes[0][3] / (wicomico_votes[0][3] + wicomico_votes[1][3])));
 
   svg.select("#worcester")
       .data(subset)
-      .attr("r", sqrtScale(worcester_votes[0][0] + worcester_votes[1][0]))
+      .attr("r", sqrtScale(worcester_votes[0][3] + worcester_votes[1][3]))
       .attr("fill", circle_fill( worcester_votes[0][3] / (worcester_votes[0][3] + worcester_votes[1][3])));
 
 });
@@ -235,108 +233,79 @@ function resize() {
 
   // CHANGE SECOND INDECES TO 3 ON ELECTION NIGHT
   svg.select("#allegany")
-      .attr("r", sqrtScale(allegany_votes[0][0] + allegany_votes[1][0]));
+      .attr("r", sqrtScale(allegany_votes[0][3] + allegany_votes[1][3]));
 
   svg.select("#annearundel")
-      .attr("r", sqrtScale(annearundel_votes[0][0] + annearundel_votes[1][0]));
+      .attr("r", sqrtScale(annearundel_votes[0][3] + annearundel_votes[1][3]));
 
   svg.select("#baltcity")
-      .attr("r", sqrtScale(baltcity_votes[0][0] + baltcity_votes[1][0]));
+      .attr("r", sqrtScale(baltcity_votes[0][3] + baltcity_votes[1][3]));
 
   svg.select("#baltcity")
-      .attr("r", sqrtScale(baltcity_votes[0][0] + baltcity_votes[1][0]));
+      .attr("r", sqrtScale(baltcity_votes[0][3] + baltcity_votes[1][3]));
 
   svg.select("#baltcounty")
-      .attr("r", sqrtScale(baltcounty_votes[0][0] + baltcounty_votes[1][0]));
+      .attr("r", sqrtScale(baltcounty_votes[0][3] + baltcounty_votes[1][3]));
 
   svg.select("#calvert")
-      .attr("r", sqrtScale(calvert_votes[0][0] + calvert_votes[1][0]));
+      .attr("r", sqrtScale(calvert_votes[0][3] + calvert_votes[1][3]));
 
   svg.select("#caroline")
-      .attr("r", sqrtScale(caroline_votes[0][0] + caroline_votes[1][0]));
+      .attr("r", sqrtScale(caroline_votes[0][3] + caroline_votes[1][3]));
 
   svg.select("#carroll")
-      .attr("r", sqrtScale(carroll_votes[0][0] + carroll_votes[1][0]));
+      .attr("r", sqrtScale(carroll_votes[0][3] + carroll_votes[1][3]));
 
   svg.select("#cecil")
-      .attr("r", sqrtScale(cecil_votes[0][0] + cecil_votes[1][0]));
+      .attr("r", sqrtScale(cecil_votes[0][3] + cecil_votes[1][3]));
 
   svg.select("#charles")
-      .attr("r", sqrtScale(charles_votes[0][0] + charles_votes[1][0]));
+      .attr("r", sqrtScale(charles_votes[0][3] + charles_votes[1][3]));
 
   svg.select("#dorchester")
-      .attr("r", sqrtScale(dorchester_votes[0][0] + dorchester_votes[1][0]));
+      .attr("r", sqrtScale(dorchester_votes[0][3] + dorchester_votes[1][3]));
 
   svg.select("#frederick")
-      .attr("r", sqrtScale(frederick_votes[0][0] + frederick_votes[1][0]));
+      .attr("r", sqrtScale(frederick_votes[0][3] + frederick_votes[1][3]));
 
   svg.select("#garrett")
-      .attr("r", sqrtScale(garrett_votes[0][0] + garrett_votes[1][0]));
+      .attr("r", sqrtScale(garrett_votes[0][3] + garrett_votes[1][3]));
 
   svg.select("#harford")
-      .attr("r", sqrtScale(harford_votes[0][0] + harford_votes[1][0]));
+      .attr("r", sqrtScale(harford_votes[0][3] + harford_votes[1][3]));
 
   svg.select("#howard")
-      .attr("r", sqrtScale(howard_votes[0][0] + howard_votes[1][0]));
+      .attr("r", sqrtScale(howard_votes[0][3] + howard_votes[1][3]));
 
   svg.select("#kent")
-      .attr("r", sqrtScale(kent_votes[0][0] + kent_votes[1][0]));
+      .attr("r", sqrtScale(kent_votes[0][3] + kent_votes[1][3]));
 
   svg.select("#montgomery")
-      .attr("r", sqrtScale(300000));
-      //.attr("r", sqrtScale(montgomery_votes[0][0] + montgomery_votes[1][0]));
+      .attr("r", sqrtScale(montgomery_votes[0][3] + montgomery_votes[1][3]));
 
   svg.select("#pg")
-      .attr("r", sqrtScale(pg_votes[0][0] + pg_votes[1][0]));
+      .attr("r", sqrtScale(pg_votes[0][3] + pg_votes[1][3]));
 
   svg.select("#queenanne")
-      .attr("r", sqrtScale(queenanne_votes[0][0] + queenanne_votes[1][0]));
+      .attr("r", sqrtScale(queenanne_votes[0][3] + queenanne_votes[1][3]));
 
   svg.select("#stmary")
-      .attr("r", sqrtScale(stmary_votes[0][0] + stmary_votes[1][0]));
+      .attr("r", sqrtScale(stmary_votes[0][3] + stmary_votes[1][3]));
 
   svg.select("#somerset")
-      .attr("r", sqrtScale(6000));
-      //.attr("r", sqrtScale(somerset_votes[0][0] + somerset_votes[1][0]));
+      .attr("r", sqrtScale(somerset_votes[0][3] + somerset_votes[1][3]));
 
   svg.select("#talbot")
-      .attr("r", sqrtScale(talbot_votes[0][0] + talbot_votes[1][0]));
+      .attr("r", sqrtScale(talbot_votes[0][3] + talbot_votes[1][3]));
 
   svg.select("#washington")
-      .attr("r", sqrtScale(washington_votes[0][0] + washington_votes[1][0]));
+      .attr("r", sqrtScale(washington_votes[0][3] + washington_votes[1][3]));
 
   svg.select("#wicomico")
-      .attr("r", sqrtScale(wicomico_votes[0][0] + wicomico_votes[1][0]));
+      .attr("r", sqrtScale(wicomico_votes[0][3] + wicomico_votes[1][3]));
 
   svg.select("#worcester")
-      .attr("r", sqrtScale(worcester_votes[0][0] + worcester_votes[1][0]));
+      .attr("r", sqrtScale(worcester_votes[0][3] + worcester_votes[1][3]));
 
 
-/*
-  svg.select("#annearundel")
-    .attr("cx", "64%")
-    .attr("cy", "38%");
-
-  x.rangeRound([0, width]);
-
-  d3.select(svg.node().parentNode)
-      .attr('width', (width + margin.left + margin.right) + 'px');
-
-  d3.select('svg')
-      .attr('width', (width + margin.left + margin.right) + 'px');
-
-  g.selectAll(".line")
-      .attr("d", line);
-
-  g.selectAll(".dot")
-     .attr("cx", function(d, i) { return x(d.date)})
-     .attr("cy", function(d) { return y(d.rank)});
-
-   g.selectAll(".x-axis")
-       .call(d3.axisBottom(x).ticks(3).tickSize(0).tickPadding(10));
-
-   // book first appeared
-   g.selectAll(".first-curve")
-     .attr("transform",function(d) { return "translate(" + (x(parseTime("2-Feb-13"))+ 15) + ",52)"; });
-*/
 };
