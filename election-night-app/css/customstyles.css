@@ -14,12 +14,14 @@
 }
 
 #subtitle {
+  font-family: 'Poppins';
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 15px;
 }
 
 #byline {
+  font-family: 'Poppins';
   font-size: 13px;
   font-weight: 400;
 }
@@ -40,6 +42,7 @@
   text-align: center;
   font-size: 13px;
   margin-bottom: 50px;
+  font-family: 'Poppins';
 }
 
 #winner {
@@ -69,15 +72,17 @@
 }
 
 #svg-box text {
+  font-family: 'Poppins';
   text-anchor: middle;
   font-size: 10px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 #table {
   font-size: 12px;
   margin-top: 50px;
   margin-bottom: 100px;
+  font-family: 'Poppins';
 }
 
 .table-row {

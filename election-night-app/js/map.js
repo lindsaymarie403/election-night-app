@@ -38,14 +38,7 @@ function circle_fill(d) {
 d3.json("Results.js", function(error, data) {
 
   var subset = data.Results.filter(function(d) { return d[2] == '2' && d[0] == '12803' || d[2] == '2' && d[0] == '12804'; });
-/*
-  subset.forEach(function(d) {
-    d.candidate = d[0];
-    d.jurisdiction = d[1];
-    d.district = d[2];
-    d.votes = d[3];
-  });
-*/
+
   allegany_votes = subset.filter(function(d) { return d[1] == '1'});
 
   annearundel_votes = subset.filter(function(d) { return d[1] == '2'});
