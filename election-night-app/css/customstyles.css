@@ -47,12 +47,12 @@
 
 #winner {
   background-color: #d3d3d3;
-  padding: 5px;
+  padding: 3px 7px 3px 7px;
 }
 
 #pct {
   background-color: #d3d3d3;
-  padding: 5px;
+  padding: 3px 7px 3px 7px;
 }
 
 #map-wrapper {
@@ -99,7 +99,8 @@
 }
 
 .head-row {
-  font-weight: 700;
+  font-weight: 600;
+  line-height: 1.3em;
 }
 
 #candidates-row {
