@@ -21,7 +21,7 @@
   </head>
 
   <body>
-    <div id="header"></div>
+    <div id="header">Early Voting Results</div>
 
      <div class="container"> <!--beginning of main body section of document -->
 
@@ -34,15 +34,19 @@
        </div>
 
        <div class="row" id="map">
+         <!--
          <div class="col-lg-4 col-md-5 col-sm-10 offset-md-1" id="legend">
            <span id="winner">Winner: Undeclared</span>
            <img src="assets/legend.png" id="legend-image">
            <p id="precincts"><span class="state-pre" id="pct">0%</span> Precincts Reporting</p>
          </div>
+       -->
          <div class="col-sm-10 offset-sm-1" id="map-wrapper">
            <img src="assets/state.png" id="map-image"/>
            <div id="svg-box" class="col-12">
               <!--<svg id="map-svg" width="950px" height="100%">-->
+
+
               <svg id="map-svg" width="100%" height="100%">
 
                <circle id="garrett" cx="7%" cy="8%" r="2" stroke-width="3" />
@@ -121,6 +125,22 @@
 
                <circle id="worcester" cx="90%" cy="84%" r="2" stroke-width="3" />
                <text x="90%" y="84%">Worcester</text>
+
+               <!--circles for legend, here because they need to be responsive at the same scale as the others-->
+               <defs>
+                <clipPath id="cut-off-bottom">
+                  <rect x="0" y="150" width="100%" height="100" />
+                </clipPath>
+              </defs>
+
+               <!--<text x="20%" y="84%" id="winner">Winner: Undeclared</text>-->
+               <circle id="legend-big" cx="20%" cy="250" stroke-width="3" clip-path="url(#cut-off-bottom)" />
+               <circle id="legend-mid" cx="20%" cy="250" stroke-width="3" clip-path="url(#cut-off-bottom)" />
+               <circle id="legend-small" cx="20%" cy="250" stroke-width="3" clip-path="url(#cut-off-bottom)" />
+               <!--
+               <img src="assets/legend.png" id="legend-image">
+               <p id="precincts"><span class="state-pre" id="pct">0%</span> Precincts Reporting</p>
+             -->
 
              </svg>
           </div>

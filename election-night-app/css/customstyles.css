@@ -1,8 +1,15 @@
 #header {
   width: 100%;
-  height: 15px;
-  background-color: #d3d3d3;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #1c1c1c;
   margin-bottom: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Poppins';
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
 }
 
 #title {
@@ -43,6 +50,18 @@
   font-size: 13px;
   margin-bottom: 50px;
   font-family: 'Poppins';
+}
+
+#legend-big {
+  fill: #d3d3d3;
+}
+
+#legend-mid {
+  fill: #b2b2b2;
+}
+
+#legend-small {
+  fill: #848484;
 }
 
 #winner {

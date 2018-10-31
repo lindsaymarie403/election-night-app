@@ -210,6 +210,46 @@ d3.json("Results.js", function(error, data) {
       .attr("r", sqrtScale(worcester_votes[0][3] + worcester_votes[1][3]))
       .attr("fill", circle_fill( worcester_votes[0][3] / (worcester_votes[0][3] + worcester_votes[1][3])));
 
+/*
+  svg.select("#winner")
+     //.attr("x", "10%")
+     //.attr("y", "10%")
+     .attr("fill", "#d3d3d3")
+     //.style("text-anchor", "middle")
+     .style("font-family","Poppins")
+     .style("font-size", "12px")
+     .style("font-weight", "600");
+*/
+
+  svg.select("#legend-big")
+    .attr("r", sqrtScale(250000));
+
+  svg.select("#legend-mid")
+    .attr("r", sqrtScale(100000));
+
+  svg.select("#legend-small")
+    .attr("r", sqrtScale(25000));
+
+  svg.select(".legend-big-text")
+      .data(subset)
+    .enter().append(text)
+      .attr("class", "legend-big-text")
+      .attr("x","20")
+      .attr("y", "100")
+      .text("250,000 Votes");
+
+/*
+  svg.selectAll(".legend-image")
+      .data(subset)
+   .enter().append("image")
+   .attr("class", "legend-image")
+   .attr("xlink:href", "assets/legend.png")
+   .attr("x", "10%")
+   .attr("y", "55%")
+   .attr("width", "300")
+   .attr("height", "100");
+   */
+
 });
 
 document.addEventListener("DOMContentLoaded", resize);
@@ -224,7 +264,6 @@ function resize() {
 
   sqrtScale.range([0, (width / 10)]);
 
-  // CHANGE SECOND INDECES TO 3 ON ELECTION NIGHT
   svg.select("#allegany")
       .attr("r", sqrtScale(allegany_votes[0][3] + allegany_votes[1][3]));
 
@@ -300,5 +339,24 @@ function resize() {
   svg.select("#worcester")
       .attr("r", sqrtScale(worcester_votes[0][3] + worcester_votes[1][3]));
 
+  svg.select("#legend-big")
+    .attr("r", sqrtScale(250000));
+
+  svg.select("#legend-mid")
+    .attr("r", sqrtScale(100000));
+
+  svg.select("#legend-small")
+    .attr("r", sqrtScale(25000));
+
 
 };
+
+//CODE FOR CIRCLE LEGEND
+/*
+var svg2 = d3.select('#legend-svg')
+
+d3.json("Results.js", function(error, data) {
+  svg2.select("#legend-big")
+    .attr("r", sqrtScale(250000))
+});
+*/
