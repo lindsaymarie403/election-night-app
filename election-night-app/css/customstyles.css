@@ -12,6 +12,12 @@
   color: #ffffff;
 }
 
+#top-block {
+  position: absolute;
+  margin-left: 8%;
+  width: 84%;
+}
+
 #title {
   font-family: 'Droid Serif';
   font-size: 26px;
@@ -34,7 +40,7 @@
 }
 
 #map {
-  padding-top: 80px;
+  padding-top: 50px;
 }
 
 #map-image, #legend-image {
@@ -94,7 +100,8 @@
   font-family: 'Poppins';
   text-anchor: middle;
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 #table {
@@ -118,7 +125,7 @@
 }
 
 .head-row {
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.3em;
 }
 
@@ -142,6 +149,17 @@
   }
 }
 
+@media (max-width: 992px) {
+  #map {
+    padding-top: 70px;
+  }
+  #top-block {
+    margin-left: auto;
+    width: 90%;
+    max-width: 720px;
+  }
+}
+
 @media (max-width: 768px) {
   #map {
     padding-top: 30px;
@@ -152,6 +170,11 @@
     margin-left: auto;
     margin-right: auto;
   }
+  #top-block {
+    margin-left: auto;
+    width: 90%;
+    max-width: 540px;
+  }
   #title, #subtitle, #byline {
     text-align: center;
   }
@@ -160,5 +183,8 @@
   }
   #svg-box text {
     font-size: 7px;
+  }
+  #map {
+    padding-top: 150px;
   }
 }

@@ -210,22 +210,10 @@ d3.json("Results.js", function(error, data) {
       .attr("r", sqrtScale(worcester_votes[0][3] + worcester_votes[1][3]))
       .attr("fill", circle_fill( worcester_votes[0][3] / (worcester_votes[0][3] + worcester_votes[1][3])));
 
-/*
-  svg.select("#winner")
-     //.attr("x", "10%")
-     //.attr("y", "10%")
-     .attr("fill", "#d3d3d3")
-     //.style("text-anchor", "middle")
-     .style("font-family","Poppins")
-     .style("font-size", "12px")
-     .style("font-weight", "600");
-*/
-
- //
   svg.append("text")
     .attr("class", "legend-title")
     .attr("x","18%")
-    .attr("y", "22%")
+    .attr("y", "39%")
     .text("Vote Total")
     .style("font-family","Poppins")
     .style("font-weight", "600")
@@ -243,25 +231,28 @@ d3.json("Results.js", function(error, data) {
   svg.append("text")
     .attr("class", "legend-big-text")
     .attr("x","18%")
-    .attr("y", "30%")
-    .text("250K");
+    .attr("y", "45%")
+    .text("250K")
+    .style("font-weight", "400");
 
   svg.append("text")
     .attr("class", "legend-mid-text")
     .attr("x","18%")
-    .attr("y", "37%")
-    .text("100K");
+    .attr("y", "50%")
+    .text("100K")
+    .style("font-weight", "400");
 
   svg.append("text")
     .attr("class", "legend-small-text")
     .attr("x","18%")
-    .attr("y", "45%")
-    .text("25K");
+    .attr("y", "55%")
+    .text("25K")
+    .style("font-weight", "400");
 
   svg.append("text")
     .attr("class", "color-title")
     .attr("x","18%")
-    .attr("y", "72%")
+    .attr("y", "75%")
     .text("Vote Share")
     .style("font-family","Poppins")
     .style("font-weight", "600")
@@ -294,9 +285,6 @@ function resize() {
 
   svg.select("#annearundel")
       .attr("r", sqrtScale(annearundel_votes[0][3] + annearundel_votes[1][3]));
-
-  svg.select("#baltcity")
-      .attr("r", sqrtScale(baltcity_votes[0][3] + baltcity_votes[1][3]));
 
   svg.select("#baltcity")
       .attr("r", sqrtScale(baltcity_votes[0][3] + baltcity_votes[1][3]));
@@ -372,22 +360,5 @@ function resize() {
 
   svg.select("#legend-small")
     .attr("r", sqrtScale(25000));
-/*
-  svg.select(".legend-big-text")
-    .attr("y", 200 - sqrtScale(250000) - 5);
-
-  svg.select(".legend-mid-text")
-    .attr("y", 200 - sqrtScale(100000) - 5);
-*/
 
 };
-
-//CODE FOR CIRCLE LEGEND
-/*
-var svg2 = d3.select('#legend-svg')
-
-d3.json("Results.js", function(error, data) {
-  svg2.select("#legend-big")
-    .attr("r", sqrtScale(250000))
-});
-*/

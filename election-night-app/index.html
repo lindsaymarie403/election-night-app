@@ -26,7 +26,7 @@
      <div class="container"> <!--beginning of main body section of document -->
 
        <div class="row" id="top-block">
-         <div class="col-sm-10 offset-sm-1">
+         <div>
            <p id="title">How is Maryland voting in the 2018 governor's race?</p>
            <p id="subtitle">Watch the state's votes come in</p>
            <p id="byline">By Lindsay Huth, Capital News Service</p>
@@ -34,7 +34,7 @@
        </div>
 
        <div class="row" id="map">
-         <!--
+         <!--old version of legend
          <div class="col-lg-4 col-md-5 col-sm-10 offset-md-1" id="legend">
            <span id="winner">Winner: Undeclared</span>
            <img src="assets/legend.png" id="legend-image">
@@ -42,88 +42,81 @@
          </div>
        -->
          <div class="col-lg-10 offset-lg-1" id="map-wrapper">
-           <img src="assets/state.png" id="map-image"/>
+           <img src="assets/state2.png" id="map-image"/>
            <div id="svg-box" class="col-12">
-              <!--<svg id="map-svg" width="950px" height="100%">-->
-
 
               <svg id="map-svg" width="100%" height="100%">
 
-               <circle id="garrett" cx="7%" cy="8%" r="2" stroke-width="3" />
-               <text x="7%" y="8%">Garrett</text>
+               <circle id="garrett" cx="6%" cy="30%" r="2" stroke-width="3" />
+               <text x="6%" y="29%">Garrett</text>
 
-               <circle id="allegany" cx="18%" cy="6%" r="2" stroke-width="3" />
-               <text x="18%" y="6%">Allegany</text>
+               <circle id="allegany" cx="18%" cy="29%" r="2" stroke-width="3" />
+               <text x="18%" y="28%">Allegany</text>
 
-               <circle id="washington" cx="38%" cy="6%" r="2" stroke-width="3" />
-               <text x="38%" y="6%">Washington</text>
+               <circle id="washington" cx="38%" cy="31%" r="2" stroke-width="3" />
+               <text x="38%" y="30%">Washington</text>
 
-               <circle id="frederick" cx="45%" cy="11%" r="2" stroke-width="3" />
-               <text x="45%" y="11%">Frederick</text>
+               <circle id="frederick" cx="45%" cy="34%" r="2" stroke-width="3" />
+               <text x="45%" y="33%">Frederick</text>
 
-               <circle id="montgomery" cx="46%" cy="32%" r="2" stroke-width="3" />
-               <text x="46%" y="32%">Montgomery</text>
+               <circle id="montgomery" cx="48%" cy="47%" r="2" stroke-width="3" />
+               <text x="48%" y="46%">Montgomery</text>
 
-               <circle id="carroll" cx="52%" cy="5%" r="2" stroke-width="3" />
-               <text x="52%" y="5%">Carroll</text>
+               <circle id="carroll" cx="53%" cy="29%" r="2" stroke-width="3" />
+               <text x="53%" y="27%">Carroll</text>
 
-               <circle id="howard" cx="55%" cy="25%" r="2" stroke-width="3" />
-               <text x="55%" y="25%">Howard</text>
+               <circle id="howard" cx="55%" cy="43%" r="2" stroke-width="3" />
+               <text x="55%" y="42%">Howard</text>
 
-               <circle id="baltcounty" cx="61%" cy="8%" r="2" stroke-width="3" />
-               <text x="61%" y="7%">Baltimore</text>
-               <text x="61%" y="10%">County</text>
+               <circle id="baltcounty" cx="61%" cy="33%" r="2" stroke-width="3" />
+               <text x="61%" y="32%">Baltimore County</text>
 
-               <circle id="baltcity" cx="63%" cy="24%" r="2" stroke-width="3" />
-               <text x="63%" y="23%">Baltimore</text>
-               <text x="63%" y="26%">City</text>
+               <circle id="baltcity" cx="62.5%" cy="41%" r="2" stroke-width="3" />
+               <text x="63%" y="40%">Baltimore City</text>
 
-               <circle id="harford" cx="70%" cy="10%" r="2" stroke-width="3" />
-               <text x="70%" y="10%">Harford</text>
+               <circle id="harford" cx="70%" cy="30%" r="2" stroke-width="3" />
+               <text x="70%" y="29%">Harford</text>
 
-               <circle id="cecil" cx="77%" cy="6%" r="2" stroke-width="3" />
-               <text x="77%" y="6%">Cecil</text>
+               <circle id="cecil" cx="77%" cy="28%" r="2" stroke-width="3" />
+               <text x="77%" y="27%">Cecil</text>
 
-               <circle id="pg" cx="55%" cy="54%" r="2" stroke-width="3" />
-               <text x="55%" y="53%">Prince</text>
-               <text x="55%" y="56%">George's</text>
+               <circle id="pg" cx="55%" cy="59%" r="2" stroke-width="3" />
+               <text x="55%" y="58%">Prince George's</text>
 
-               <circle id="annearundel" cx="64%" cy="38%" r="2" stroke-width="3" />
-               <text x="64%" y="37%">Anne</text>
-               <text x="64%" y="40%">Arundel</text>
+               <circle id="annearundel" cx="64%" cy="51%" r="2" stroke-width="3" />
+               <text x="64%" y="50%">Anne Arundel</text>
 
-               <circle id="charles" cx="52%" cy="70%" r="2" stroke-width="3" />
-               <text x="52%" y="70%">Charles</text>
+               <circle id="charles" cx="52%" cy="72%" r="2" stroke-width="3" />
+               <text x="52%" y="71%">Charles</text>
 
-               <circle id="calvert" cx="63%" cy="67%" r="2" stroke-width="3" />
-               <text x="63%" y="67%">Calvert</text>
+               <circle id="calvert" cx="63%" cy="69%" r="2" stroke-width="3" />
+               <text x="63%" y="68%">Calvert</text>
 
                <circle id="stmary" cx="62%" cy="79%" r="2" stroke-width="3" />
-               <text x="62%" y="79%">St. Mary's</text>
+               <text x="62%" y="78%">St. Mary's</text>
 
-               <circle id="kent" cx="76%" cy="24%" r="2" stroke-width="3" />
-               <text x="76%" y="24%">Kent</text>
+               <circle id="kent" cx="76%" cy="41%" r="2" stroke-width="3" />
+               <text x="76%" y="40%">Kent</text>
 
-               <circle id="queenanne" cx="77%" cy="34%" r="2" stroke-width="3" />
-               <text x="77%" y="33%">Queen</text>
-               <text x="77%" y="36%">Anne's</text>
+               <circle id="queenanne" cx="77%" cy="49%" r="2" stroke-width="3" />
+               <text x="77%" y="48%">Queen Anne's</text>
 
-               <circle id="caroline" cx="79%" cy="44%" r="2" stroke-width="3" />
-               <text x="79%" y="44%">Caroline</text>
+               <circle id="caroline" cx="79%" cy="55%" r="2" stroke-width="3" />
+               <text x="79%" y="54%">Caroline</text>
 
-               <circle id="talbot" cx="75%" cy="50%" r="2" stroke-width="3" />
-               <text x="75%" y="50%">Talbot</text>
+               <circle id="talbot" cx="75%" cy="59%" r="2" stroke-width="3" />
+               <text x="75%" y="58%">Talbot</text>
 
-               <circle id="dorchester" cx="78%" cy="68%" r="2" stroke-width="3" />
-               <text x="78%" y="68%">Dorchester</text>
+               <circle id="dorchester" cx="78%" cy="70%" r="2" stroke-width="3" />
+               <text x="78%" y="69%">Dorchester</text>
 
-               <circle id="wicomico" cx="86%" cy="74%" r="2" stroke-width="3" />
-               <text x="86%" y="74%">Wicomico</text>
+               <circle id="wicomico" cx="86%" cy="77%" r="2" stroke-width="3" />
+               <text x="86%" y="76%">Wicomico</text>
 
                <circle id="somerset" cx="81%" cy="88%" r="2" stroke-width="3" />
-               <text x="81%" y="88%">Somerset</text>
+               <text x="81%" y="87%">Somerset</text>
 
-               <circle id="worcester" cx="90%" cy="84%" r="2" stroke-width="3" />
+               <circle id="worcester" cx="90%" cy="85%" r="2" stroke-width="3" />
                <text x="90%" y="84%">Worcester</text>
 
                <!--circles for legend, here because they need to be responsive at the same scale as the others-->
@@ -136,9 +129,9 @@
               and put this in all the circles: clip-path="url(#cut-off-bottom)"-->
 
                <!--<text x="20%" y="84%" id="winner">Winner: Undeclared</text>-->
-               <circle id="legend-big" cx="18%" cy="45%" stroke-width="3" />
-               <circle id="legend-mid" cx="18%" cy="45%" stroke-width="3" />
-               <circle id="legend-small" cx="18%" cy="45%" stroke-width="3" />
+               <circle id="legend-big" cx="18%" cy="55%" stroke-width="3" />
+               <circle id="legend-mid" cx="18%" cy="55%" stroke-width="3" />
+               <circle id="legend-small" cx="18%" cy="55%" stroke-width="3" />
                <!--
                <img src="assets/legend.png" id="legend-image">
                <p id="precincts"><span class="state-pre" id="pct">0%</span> Precincts Reporting</p>
