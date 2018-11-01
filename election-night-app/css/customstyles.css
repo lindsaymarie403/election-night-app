@@ -137,6 +137,10 @@
   text-transform: uppercase;
 }
 
+.candidate-line {
+  margin-top: 20px;
+}
+
 /*media queries*/
 @media (min-width: 768px) {
   #map {

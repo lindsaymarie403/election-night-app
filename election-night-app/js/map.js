@@ -212,8 +212,8 @@ d3.json("Results.js", function(error, data) {
 
   svg.append("text")
     .attr("class", "legend-title")
-    .attr("x","18%")
-    .attr("y", "39%")
+    .attr("x","20%")
+    .attr("y", "41%")
     .text("Vote Total")
     .style("font-family","Poppins")
     .style("font-weight", "600")
@@ -230,29 +230,29 @@ d3.json("Results.js", function(error, data) {
 
   svg.append("text")
     .attr("class", "legend-big-text")
-    .attr("x","18%")
-    .attr("y", "45%")
+    .attr("x","20%")
+    .attr("y", "47%")
     .text("250K")
     .style("font-weight", "400");
 
   svg.append("text")
     .attr("class", "legend-mid-text")
-    .attr("x","18%")
-    .attr("y", "50%")
+    .attr("x","20%")
+    .attr("y", "52%")
     .text("100K")
     .style("font-weight", "400");
 
   svg.append("text")
     .attr("class", "legend-small-text")
-    .attr("x","18%")
-    .attr("y", "55%")
+    .attr("x","20%")
+    .attr("y", "57%")
     .text("25K")
     .style("font-weight", "400");
 
   svg.append("text")
     .attr("class", "color-title")
-    .attr("x","18%")
-    .attr("y", "75%")
+    .attr("x","20%")
+    .attr("y", "77%")
     .text("Vote Share")
     .style("font-family","Poppins")
     .style("font-weight", "600")
@@ -262,8 +262,8 @@ d3.json("Results.js", function(error, data) {
    .attr("class", "legend-image")
    .attr("xlink:href", "assets/legend2.png")
    .attr("x", "-5")
-   .attr("y", "74%")
-   .attr("width", "38%")
+   .attr("y", "76%")
+   .attr("width", "42%")
    .attr("height", "15%");
 
 });
