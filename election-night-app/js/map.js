@@ -221,6 +221,16 @@ d3.json("Results.js", function(error, data) {
      .style("font-weight", "600");
 */
 
+ //
+  svg.append("text")
+    .attr("class", "legend-title")
+    .attr("x","18%")
+    .attr("y", "22%")
+    .text("Vote Total")
+    .style("font-family","Poppins")
+    .style("font-weight", "600")
+    .style("text-transform", "uppercase");
+
   svg.select("#legend-big")
     .attr("r", sqrtScale(250000));
 
@@ -230,25 +240,40 @@ d3.json("Results.js", function(error, data) {
   svg.select("#legend-small")
     .attr("r", sqrtScale(25000));
 
-  svg.select(".legend-big-text")
-      .data(subset)
-    .enter().append(text)
-      .attr("class", "legend-big-text")
-      .attr("x","20")
-      .attr("y", "100")
-      .text("250,000 Votes");
+  svg.append("text")
+    .attr("class", "legend-big-text")
+    .attr("x","18%")
+    .attr("y", "30%")
+    .text("250K");
 
-/*
-  svg.selectAll(".legend-image")
-      .data(subset)
-   .enter().append("image")
+  svg.append("text")
+    .attr("class", "legend-mid-text")
+    .attr("x","18%")
+    .attr("y", "37%")
+    .text("100K");
+
+  svg.append("text")
+    .attr("class", "legend-small-text")
+    .attr("x","18%")
+    .attr("y", "45%")
+    .text("25K");
+
+  svg.append("text")
+    .attr("class", "color-title")
+    .attr("x","18%")
+    .attr("y", "72%")
+    .text("Vote Share")
+    .style("font-family","Poppins")
+    .style("font-weight", "600")
+    .style("text-transform", "uppercase");
+
+  svg.append("image")
    .attr("class", "legend-image")
-   .attr("xlink:href", "assets/legend.png")
-   .attr("x", "10%")
-   .attr("y", "55%")
-   .attr("width", "300")
-   .attr("height", "100");
-   */
+   .attr("xlink:href", "assets/legend2.png")
+   .attr("x", "-5")
+   .attr("y", "74%")
+   .attr("width", "38%")
+   .attr("height", "15%");
 
 });
 
@@ -347,7 +372,13 @@ function resize() {
 
   svg.select("#legend-small")
     .attr("r", sqrtScale(25000));
+/*
+  svg.select(".legend-big-text")
+    .attr("y", 200 - sqrtScale(250000) - 5);
 
+  svg.select(".legend-mid-text")
+    .attr("y", 200 - sqrtScale(100000) - 5);
+*/
 
 };
 
