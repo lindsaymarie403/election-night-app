@@ -48,76 +48,76 @@
               <svg id="map-svg" width="100%" height="100%">
 
                <circle id="garrett" cx="6%" cy="30%" r="2" stroke-width="3" />
-               <text x="6%" y="29%">Garrett</text>
+               <text class="county" x="6%" y="29%">Garrett</text>
 
                <circle id="allegany" cx="18%" cy="29%" r="2" stroke-width="3" />
-               <text x="18%" y="28%">Allegany</text>
+               <text class="county" x="18%" y="28%">Allegany</text>
 
                <circle id="washington" cx="38%" cy="31%" r="2" stroke-width="3" />
-               <text x="38%" y="30%">Washington</text>
+               <text class="county" x="38%" y="30%">Washington</text>
 
                <circle id="frederick" cx="45%" cy="34%" r="2" stroke-width="3" />
-               <text x="45%" y="33%">Frederick</text>
+               <text class="county" x="45%" y="33%">Frederick</text>
 
                <circle id="montgomery" cx="48%" cy="47%" r="2" stroke-width="3" />
-               <text x="48%" y="46%">Montgomery</text>
+               <text class="county" x="48%" y="46%">Montgomery</text>
 
                <circle id="carroll" cx="53%" cy="29%" r="2" stroke-width="3" />
-               <text x="53%" y="28%">Carroll</text>
+               <text class="county" x="53%" y="28%">Carroll</text>
 
                <circle id="howard" cx="55%" cy="43%" r="2" stroke-width="3" />
-               <text x="55%" y="42%">Howard</text>
+               <text class="county" x="55%" y="42%">Howard</text>
 
                <circle id="baltcounty" cx="61%" cy="33%" r="2" stroke-width="3" />
-               <text x="61%" y="32%">Baltimore County</text>
+               <text class="county" x="61%" y="32%">Baltimore Co.</text>
 
                <circle id="baltcity" cx="62.5%" cy="40.5%" r="2" stroke-width="3" />
-               <text x="63%" y="39.5%">Baltimore City</text>
+               <text class="county" x="63%" y="39.5%">Baltimore City</text>
 
                <circle id="harford" cx="70%" cy="30%" r="2" stroke-width="3" />
-               <text x="70%" y="29%">Harford</text>
+               <text class="county" x="70%" y="29%">Harford</text>
 
                <circle id="cecil" cx="77%" cy="28%" r="2" stroke-width="3" />
-               <text x="77%" y="27%">Cecil</text>
+               <text class="county" x="77%" y="27%">Cecil</text>
 
                <circle id="pg" cx="55%" cy="59%" r="2" stroke-width="3" />
-               <text x="55%" y="58%">Prince George's</text>
+               <text class="county" x="55%" y="58%">Prince George's</text>
 
                <circle id="annearundel" cx="64%" cy="51%" r="2" stroke-width="3" />
-               <text x="64%" y="50%">Anne Arundel</text>
+               <text class="county" x="64%" y="50%">Anne Arundel</text>
 
                <circle id="charles" cx="52%" cy="72%" r="2" stroke-width="3" />
-               <text x="52%" y="71%">Charles</text>
+               <text class="county" x="52%" y="71%">Charles</text>
 
                <circle id="calvert" cx="63%" cy="69%" r="2" stroke-width="3" />
-               <text x="63%" y="68%">Calvert</text>
+               <text class="county" x="63%" y="68%">Calvert</text>
 
                <circle id="stmary" cx="62%" cy="79%" r="2" stroke-width="3" />
-               <text x="62%" y="78%">St. Mary's</text>
+               <text class="county" x="62%" y="78%">St. Mary's</text>
 
                <circle id="kent" cx="76%" cy="41%" r="2" stroke-width="3" />
-               <text x="76%" y="40%">Kent</text>
+               <text class="county" x="76%" y="40%">Kent</text>
 
                <circle id="queenanne" cx="77%" cy="49%" r="2" stroke-width="3" />
-               <text x="77%" y="48%">Queen Anne's</text>
+               <text class="county" x="77%" y="48%">Queen Anne's</text>
 
                <circle id="caroline" cx="79%" cy="55%" r="2" stroke-width="3" />
-               <text x="79%" y="54%">Caroline</text>
+               <text class="county" x="79%" y="54%">Caroline</text>
 
                <circle id="talbot" cx="75%" cy="59%" r="2" stroke-width="3" />
-               <text x="75%" y="58%">Talbot</text>
+               <text class="county" x="75%" y="58%">Talbot</text>
 
                <circle id="dorchester" cx="78%" cy="70%" r="2" stroke-width="3" />
-               <text x="78%" y="69%">Dorchester</text>
+               <text class="county" x="78%" y="69%">Dorchester</text>
 
                <circle id="wicomico" cx="86%" cy="77%" r="2" stroke-width="3" />
-               <text x="86%" y="76%">Wicomico</text>
+               <text class="county" x="86%" y="76%">Wicomico</text>
 
                <circle id="somerset" cx="81%" cy="88%" r="2" stroke-width="3" />
-               <text x="81%" y="87%">Somerset</text>
+               <text class="county" x="81%" y="87%">Somerset</text>
 
                <circle id="worcester" cx="90%" cy="85%" r="2" stroke-width="3" />
-               <text x="90%" y="84%">Worcester</text>
+               <text class="county" x="90%" y="84%">Worcester</text>
 
                <!--circles for legend, here because they need to be responsive at the same scale as the others-->
                <!--if we decide to do half-circles for the legend, we need this code:
@@ -189,7 +189,7 @@
            <div class="col-1 cell" id="baltcity-pre">0</div>
          </div>
          <div class="col-sm-10 offset-sm-1 col-12 table-row">
-           <div class="col-3 cell">Baltimore County</div>
+           <div class="col-3 cell">Baltimore Co.</div>
            <div class="col-2 cell" id="baltcounty-jeal">0</div>
            <div class="col-2 cell" id="baltcounty-jeal-pct">0.0%</div>
            <div class="col-2 cell" id="baltcounty-hog">0</div>
@@ -389,201 +389,201 @@
             var precincts = data.DReporting.filter(function(d) { return d[0] == '0'; });
 
             state_votes = subset.filter(function(d) { return d[1] == '0'});
-            $("#state-jeal").text(state_votes[1][3]);
+            $("#state-jeal").text(state_votes[1][3].toLocaleString());
             $("#state-jeal-pct").text( ((state_votes[1][3] / (state_votes[1][3] + state_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#state-hog").text(state_votes[0][3]);
+            $("#state-hog").text(state_votes[0][3].toLocaleString());
             $("#state-hog-pct").text( ((state_votes[0][3] / (state_votes[1][3] + state_votes[0][3])) * 100).toFixed(1) + "%");
             state_precincts = precincts.filter(function(d) { return d[1] == '2'; });
             $(".state-pre").text( state_precincts[0][4].toFixed(0) + "%" );
 
             allegany_votes = subset.filter(function(d) { return d[1] == '1'});
-            $("#alleg-jeal").text(allegany_votes[1][3]);
+            $("#alleg-jeal").text(allegany_votes[1][3].toLocaleString());
             $("#alleg-jeal-pct").text( ((allegany_votes[1][3] / (allegany_votes[1][3] + allegany_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#alleg-hog").text(allegany_votes[0][3]);
+            $("#alleg-hog").text(allegany_votes[0][3].toLocaleString());
             $("#alleg-hog-pct").text( ((allegany_votes[0][3] / (allegany_votes[1][3] + allegany_votes[0][3])) * 100).toFixed(1) + "%");
             allegany_precincts = precincts.filter(function(d) { return d[1] == '3'; });
             $("#alleg-pre").text( allegany_precincts[0][4].toFixed(0) + "%" );
 
             annearundel_votes = subset.filter(function(d) { return d[1] == '2'});
-            $("#anne-jeal").text(annearundel_votes[1][3]);
+            $("#anne-jeal").text(annearundel_votes[1][3].toLocaleString());
             $("#anne-jeal-pct").text( ((annearundel_votes[1][3] / (annearundel_votes[1][3] + annearundel_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#anne-hog").text(annearundel_votes[0][3]);
+            $("#anne-hog").text(annearundel_votes[0][3].toLocaleString());
             $("#anne-hog-pct").text( ((annearundel_votes[0][3] / (annearundel_votes[1][3] + annearundel_votes[0][3])) * 100).toFixed(1) + "%");
             annearundel_precincts = precincts.filter(function(d) { return d[1] == '4'; });
             $("#anne-pre").text( annearundel_precincts[0][4].toFixed(0) + "%" );
 
             baltcity_votes = subset.filter(function(d) { return d[1] == '3'});
-            $("#baltcity-jeal").text(baltcity_votes[1][3]);
+            $("#baltcity-jeal").text(baltcity_votes[1][3].toLocaleString());
             $("#baltcity-jeal-pct").text( ((baltcity_votes[1][3] / (baltcity_votes[1][3] + baltcity_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#baltcity-hog").text(baltcity_votes[0][3]);
+            $("#baltcity-hog").text(baltcity_votes[0][3].toLocaleString());
             $("#baltcity-hog-pct").text( ((baltcity_votes[0][3] / (baltcity_votes[1][3] + baltcity_votes[0][3])) * 100).toFixed(1) + "%");
             baltcity_precincts = precincts.filter(function(d) { return d[1] == '5'; });
             $("#baltcity-pre").text( baltcity_precincts[0][4].toFixed(0) + "%" );
 
             baltcounty_votes = subset.filter(function(d) { return d[1] == '4'});
-            $("#baltcounty-jeal").text(baltcounty_votes[1][3]);
+            $("#baltcounty-jeal").text(baltcounty_votes[1][3].toLocaleString());
             $("#baltcounty-jeal-pct").text( ((baltcounty_votes[1][3] / (baltcounty_votes[1][3] + baltcounty_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#baltcounty-hog").text(baltcounty_votes[0][3]);
+            $("#baltcounty-hog").text(baltcounty_votes[0][3].toLocaleString());
             $("#baltcounty-hog-pct").text( ((baltcounty_votes[0][3] / (baltcounty_votes[1][3] + baltcounty_votes[0][3])) * 100).toFixed(1) + "%");
             baltcounty_precincts = precincts.filter(function(d) { return d[1] == '6'; });
             $("#baltcounty-pre").text( baltcounty_precincts[0][4].toFixed(0) + "%" );
 
             calvert_votes = subset.filter(function(d) { return d[1] == '5'});
-            $("#calv-jeal").text(calvert_votes[1][3]);
+            $("#calv-jeal").text(calvert_votes[1][3].toLocaleString());
             $("#calv-jeal-pct").text( ((calvert_votes[1][3] / (calvert_votes[1][3] + calvert_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#calv-hog").text(calvert_votes[0][3]);
+            $("#calv-hog").text(calvert_votes[0][3].toLocaleString());
             $("#calv-hog-pct").text( ((calvert_votes[0][3] / (calvert_votes[1][3] + calvert_votes[0][3])) * 100).toFixed(1) + "%");
             calvert_precincts = precincts.filter(function(d) { return d[1] == '7'; });
             $("#calv-pre").text( calvert_precincts[0][4].toFixed(0) + "%" );
 
             caroline_votes = subset.filter(function(d) { return d[1] == '6'});
-            $("#caro-jeal").text(caroline_votes[1][3]);
+            $("#caro-jeal").text(caroline_votes[1][3].toLocaleString());
             $("#caro-jeal-pct").text( ((caroline_votes[1][3] / (caroline_votes[1][3] + caroline_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#caro-hog").text(caroline_votes[0][3]);
+            $("#caro-hog").text(caroline_votes[0][3].toLocaleString());
             $("#caro-hog-pct").text( ((caroline_votes[0][3] / (caroline_votes[1][3] + caroline_votes[0][3])) * 100).toFixed(1) + "%");
             caroline_precincts = precincts.filter(function(d) { return d[1] == '8'; });
             $("#caro-pre").text( caroline_precincts[0][4].toFixed(0) + "%" );
 
             carroll_votes = subset.filter(function(d) { return d[1] == '7'});
-            $("#carr-jeal").text(carroll_votes[1][3]);
+            $("#carr-jeal").text(carroll_votes[1][3].toLocaleString());
             $("#carr-jeal-pct").text( ((carroll_votes[1][3] / (carroll_votes[1][3] + carroll_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#carr-hog").text(carroll_votes[0][3]);
+            $("#carr-hog").text(carroll_votes[0][3].toLocaleString());
             $("#carr-hog-pct").text( ((carroll_votes[0][3] / (carroll_votes[1][3] + carroll_votes[0][3])) * 100).toFixed(1) + "%");
             carroll_precincts = precincts.filter(function(d) { return d[1] == '9'; });
             $("#carr-pre").text( carroll_precincts[0][4].toFixed(0) + "%" );
 
             cecil_votes = subset.filter(function(d) { return d[1] == '8'});
-            $("#cecil-jeal").text(cecil_votes[1][3]);
+            $("#cecil-jeal").text(cecil_votes[1][3].toLocaleString());
             $("#cecil-jeal-pct").text( ((cecil_votes[1][3] / (cecil_votes[1][3] + cecil_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#cecil-hog").text(cecil_votes[0][3]);
+            $("#cecil-hog").text(cecil_votes[0][3].toLocaleString());
             $("#cecil-hog-pct").text( ((cecil_votes[0][3] / (cecil_votes[1][3] + cecil_votes[0][3])) * 100).toFixed(1) + "%");
             cecil_precincts = precincts.filter(function(d) { return d[1] == '10'; });
             $("#cecil-pre").text( cecil_precincts[0][4].toFixed(0) + "%" );
 
             charles_votes = subset.filter(function(d) { return d[1] == '9'});
-            $("#char-jeal").text(charles_votes[1][3]);
+            $("#char-jeal").text(charles_votes[1][3].toLocaleString());
             $("#char-jeal-pct").text( ((charles_votes[1][3] / (charles_votes[1][3] + charles_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#char-hog").text(charles_votes[0][3]);
+            $("#char-hog").text(charles_votes[0][3].toLocaleString());
             $("#char-hog-pct").text( ((charles_votes[0][3] / (charles_votes[1][3] + charles_votes[0][3])) * 100).toFixed(1) + "%");
             charles_precincts = precincts.filter(function(d) { return d[1] == '11'; });
             $("#char-pre").text( charles_precincts[0][4].toFixed(0) + "%" );
 
             dorchester_votes = subset.filter(function(d) { return d[1] == '10'});
-            $("#dorch-jeal").text(dorchester_votes[1][3]);
+            $("#dorch-jeal").text(dorchester_votes[1][3].toLocaleString());
             $("#dorch-jeal-pct").text( ((dorchester_votes[1][3] / (dorchester_votes[1][3] + dorchester_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#dorch-hog").text(dorchester_votes[0][3]);
+            $("#dorch-hog").text(dorchester_votes[0][3].toLocaleString());
             $("#dorch-hog-pct").text( ((dorchester_votes[0][3] / (dorchester_votes[1][3] + dorchester_votes[0][3])) * 100).toFixed(1) + "%");
             dorchester_precincts = precincts.filter(function(d) { return d[1] == '12'; });
             $("#dorch-pre").text( dorchester_precincts[0][4].toFixed(0) + "%" );
 
             frederick_votes = subset.filter(function(d) { return d[1] == '11'});
-            $("#fred-jeal").text(frederick_votes[1][3]);
+            $("#fred-jeal").text(frederick_votes[1][3].toLocaleString());
             $("#fred-jeal-pct").text( ((frederick_votes[1][3] / (frederick_votes[1][3] + frederick_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#fred-hog").text(frederick_votes[0][3]);
+            $("#fred-hog").text(frederick_votes[0][3].toLocaleString());
             $("#fred-hog-pct").text( ((frederick_votes[0][3] / (frederick_votes[1][3] + frederick_votes[0][3])) * 100).toFixed(1) + "%");
             frederick_precincts = precincts.filter(function(d) { return d[1] == '13'; });
             $("#fred-pre").text( frederick_precincts[0][4].toFixed(0) + "%" );
 
             garrett_votes = subset.filter(function(d) { return d[1] == '12'});
-            $("#garr-jeal").text(garrett_votes[1][3]);
+            $("#garr-jeal").text(garrett_votes[1][3].toLocaleString());
             $("#garr-jeal-pct").text( ((garrett_votes[1][3] / (garrett_votes[1][3] + garrett_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#garr-hog").text(garrett_votes[0][3]);
+            $("#garr-hog").text(garrett_votes[0][3].toLocaleString());
             $("#garr-hog-pct").text( ((garrett_votes[0][3] / (garrett_votes[1][3] + garrett_votes[0][3])) * 100).toFixed(1) + "%");
             garrett_precincts = precincts.filter(function(d) { return d[1] == '14'; });
             $("#garr-pre").text( garrett_precincts[0][4].toFixed(0) + "%" );
 
             harford_votes = subset.filter(function(d) { return d[1] == '13'});
-            $("#harf-jeal").text(harford_votes[1][3]);
+            $("#harf-jeal").text(harford_votes[1][3].toLocaleString());
             $("#harf-jeal-pct").text( ((harford_votes[1][3] / (harford_votes[1][3] + harford_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#harf-hog").text(harford_votes[0][3]);
+            $("#harf-hog").text(harford_votes[0][3].toLocaleString());
             $("#harf-hog-pct").text( ((harford_votes[0][3] / (harford_votes[1][3] + harford_votes[0][3])) * 100).toFixed(1) + "%");
             harford_precincts = precincts.filter(function(d) { return d[1] == '15'; });
             $("#harf-pre").text( harford_precincts[0][4].toFixed(0) + "%" );
 
             howard_votes = subset.filter(function(d) { return d[1] == '14'});
-            $("#how-jeal").text(howard_votes[1][3]);
+            $("#how-jeal").text(howard_votes[1][3].toLocaleString());
             $("#how-jeal-pct").text( ((howard_votes[1][3] / (howard_votes[1][3] + howard_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#how-hog").text(howard_votes[0][3]);
+            $("#how-hog").text(howard_votes[0][3].toLocaleString());
             $("#how-hog-pct").text( ((howard_votes[0][3] / (howard_votes[1][3] + howard_votes[0][3])) * 100).toFixed(1) + "%");
             howard_precincts = precincts.filter(function(d) { return d[1] == '16'; });
             $("#how-pre").text( howard_precincts[0][4].toFixed(0) + "%" );
 
             kent_votes = subset.filter(function(d) { return d[1] == '15'});
-            $("#kent-jeal").text(kent_votes[1][3]);
+            $("#kent-jeal").text(kent_votes[1][3].toLocaleString());
             $("#kent-jeal-pct").text( ((kent_votes[1][3] / (kent_votes[1][3] + kent_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#kent-hog").text(kent_votes[0][3]);
+            $("#kent-hog").text(kent_votes[0][3].toLocaleString());
             $("#kent-hog-pct").text( ((kent_votes[0][3] / (kent_votes[1][3] + kent_votes[0][3])) * 100).toFixed(1) + "%");
             kent_precincts = precincts.filter(function(d) { return d[1] == '17'; });
             $("#kent-pre").text( kent_precincts[0][4].toFixed(0) + "%" );
 
             montgomery_votes = subset.filter(function(d) { return d[1] == '16'});
-            $("#mont-jeal").text(montgomery_votes[1][3]);
+            $("#mont-jeal").text(montgomery_votes[1][3].toLocaleString());
             $("#mont-jeal-pct").text( ((montgomery_votes[1][3] / (montgomery_votes[1][3] + montgomery_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#mont-hog").text(montgomery_votes[0][3]);
+            $("#mont-hog").text(montgomery_votes[0][3].toLocaleString());
             $("#mont-hog-pct").text( ((montgomery_votes[0][3] / (montgomery_votes[1][3] + montgomery_votes[0][3])) * 100).toFixed(1) + "%");
             montgomery_precincts = precincts.filter(function(d) { return d[1] == '18'; });
             $("#mont-pre").text( montgomery_precincts[0][4].toFixed(0) + "%" );
 
             pg_votes = subset.filter(function(d) { return d[1] == '17'});
-            $("#pg-jeal").text(pg_votes[1][3]);
+            $("#pg-jeal").text(pg_votes[1][3].toLocaleString());
             $("#pg-jeal-pct").text( ((pg_votes[1][3] / (pg_votes[1][3] + pg_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#pg-hog").text(pg_votes[0][3]);
+            $("#pg-hog").text(pg_votes[0][3].toLocaleString());
             $("#pg-hog-pct").text( ((pg_votes[0][3] / (pg_votes[1][3] + pg_votes[0][3])) * 100).toFixed(1) + "%");
             pg_precincts = precincts.filter(function(d) { return d[1] == '19'; });
             $("#pg-pre").text( pg_precincts[0][4].toFixed(0) + "%" );
 
             queenanne_votes = subset.filter(function(d) { return d[1] == '18'});
-            $("#queen-jeal").text(queenanne_votes[1][3]);
+            $("#queen-jeal").text(queenanne_votes[1][3].toLocaleString());
             $("#queen-jeal-pct").text( ((queenanne_votes[1][3] / (queenanne_votes[1][3] + queenanne_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#queen-hog").text(queenanne_votes[0][3]);
+            $("#queen-hog").text(queenanne_votes[0][3].toLocaleString());
             $("#queen-hog-pct").text( ((queenanne_votes[0][3] / (queenanne_votes[1][3] + queenanne_votes[0][3])) * 100).toFixed(1) + "%");
             queenanne_precincts = precincts.filter(function(d) { return d[1] == '20'; });
             $("#queen-pre").text( queenanne_precincts[0][4].toFixed(0) + "%" );
 
             stmary_votes = subset.filter(function(d) { return d[1] == '19'});
-            $("#stmary-jeal").text(stmary_votes[1][3]);
+            $("#stmary-jeal").text(stmary_votes[1][3].toLocaleString());
             $("#stmary-jeal-pct").text( ((stmary_votes[1][3] / (stmary_votes[1][3] + stmary_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#stmary-hog").text(stmary_votes[0][3]);
+            $("#stmary-hog").text(stmary_votes[0][3].toLocaleString());
             $("#stmary-hog-pct").text( ((stmary_votes[0][3] / (stmary_votes[1][3] + stmary_votes[0][3])) * 100).toFixed(1) + "%");
             stmary_precincts = precincts.filter(function(d) { return d[1] == '21'; });
             $("#stmary-pre").text( stmary_precincts[0][4].toFixed(0) + "%" );
 
             somerset_votes = subset.filter(function(d) { return d[1] == '20'});
-            $("#some-jeal").text(somerset_votes[1][3]);
+            $("#some-jeal").text(somerset_votes[1][3].toLocaleString());
             $("#some-jeal-pct").text( ((somerset_votes[1][3] / (somerset_votes[1][3] + somerset_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#some-hog").text(somerset_votes[0][3]);
+            $("#some-hog").text(somerset_votes[0][3].toLocaleString());
             $("#some-hog-pct").text( ((somerset_votes[0][3] / (somerset_votes[1][3] + somerset_votes[0][3])) * 100).toFixed(1) + "%");
             somerset_precincts = precincts.filter(function(d) { return d[1] == '22'; });
             $("#some-pre").text( somerset_precincts[0][4].toFixed(0) + "%" );
 
             talbot_votes = subset.filter(function(d) { return d[1] == '21'});
-            $("#talb-jeal").text(talbot_votes[1][3]);
+            $("#talb-jeal").text(talbot_votes[1][3].toLocaleString());
             $("#talb-jeal-pct").text( ((talbot_votes[1][3] / (talbot_votes[1][3] + talbot_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#talb-hog").text(talbot_votes[0][3]);
+            $("#talb-hog").text(talbot_votes[0][3].toLocaleString());
             $("#talb-hog-pct").text( ((talbot_votes[0][3] / (talbot_votes[1][3] + talbot_votes[0][3])) * 100).toFixed(1) + "%");
             talbot_precincts = precincts.filter(function(d) { return d[1] == '23'; });
             $("#talb-pre").text( talbot_precincts[0][4].toFixed(0) + "%" );
 
             washington_votes = subset.filter(function(d) { return d[1] == '22'});
-            $("#wash-jeal").text(washington_votes[1][3]);
+            $("#wash-jeal").text(washington_votes[1][3].toLocaleString());
             $("#wash-jeal-pct").text( ((washington_votes[1][3] / (washington_votes[1][3] + washington_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#wash-hog").text(washington_votes[0][3]);
+            $("#wash-hog").text(washington_votes[0][3].toLocaleString());
             $("#wash-hog-pct").text( ((washington_votes[0][3] / (washington_votes[1][3] + washington_votes[0][3])) * 100).toFixed(1) + "%");
             washington_precincts = precincts.filter(function(d) { return d[1] == '24'; });
             $("#wash-pre").text( washington_precincts[0][4].toFixed(0) + "%" );
 
             wicomico_votes = subset.filter(function(d) { return d[1] == '23'});
-            $("#wico-jeal").text(wicomico_votes[1][3]);
+            $("#wico-jeal").text(wicomico_votes[1][3].toLocaleString());
             $("#wico-jeal-pct").text( ((wicomico_votes[1][3] / (wicomico_votes[1][3] + wicomico_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#wico-hog").text(wicomico_votes[0][3]);
+            $("#wico-hog").text(wicomico_votes[0][3].toLocaleString());
             $("#wico-hog-pct").text( ((wicomico_votes[0][3] / (wicomico_votes[1][3] + wicomico_votes[0][3])) * 100).toFixed(1) + "%");
             wicomico_precincts = precincts.filter(function(d) { return d[1] == '25'; });
             $("#wico-pre").text( wicomico_precincts[0][4].toFixed(0) + "%" );
 
             worcester_votes = subset.filter(function(d) { return d[1] == '24'});
-            $("#worc-jeal").text(worcester_votes[1][3]);
+            $("#worc-jeal").text(worcester_votes[1][3].toLocaleString());
             $("#worc-jeal-pct").text( ((worcester_votes[1][3] / (worcester_votes[1][3] + worcester_votes[0][3])) * 100).toFixed(1) + "%");
-            $("#worc-hog").text(worcester_votes[0][3]);
+            $("#worc-hog").text(worcester_votes[0][3].toLocaleString());
             $("#worc-hog-pct").text( ((worcester_votes[0][3] / (worcester_votes[1][3] + worcester_votes[0][3])) * 100).toFixed(1) + "%");
             worcester_precincts = precincts.filter(function(d) { return d[1] == '26'; });
             $("#worc-pre").text( worcester_precincts[0][4].toFixed(0) + "%" );

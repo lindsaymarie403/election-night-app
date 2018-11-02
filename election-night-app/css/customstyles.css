@@ -191,3 +191,9 @@
     padding-top: 150px;
   }
 }
+
+@media (max-width: 500px) {
+  .county {
+    display: none;
+  }
+}
