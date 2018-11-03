@@ -12,11 +12,12 @@
   color: #ffffff;
 }
 
+/*text in top block*/
 #top-block {
   position: absolute;
   margin-left: 8%;
   width: 84%;
-  max-width: 1000px;
+  width: 1000px;
 }
 
 #title {
@@ -34,14 +35,48 @@
   margin-bottom: 15px;
 }
 
+#early {
+  background-color: #ec1c24;
+  padding: 1px 6px 0px 6px;
+  font-size: 12px;
+  font-weight: 400;
+  color: white;
+  text-transform: uppercase;
+}
+
 #byline {
   font-family: 'Poppins';
   font-size: 13px;
   font-weight: 400;
+  margin-bottom: 25px;
 }
 
+#status-bar {
+  border-top: 1px solid #d3d3d3;
+  padding-top: 25px;
+  width: 100%;
+}
+
+#winner, #precincts {
+  float: left;
+  font-family: 'Poppins';
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.winner-status, #pct {
+  background-color: #d3d3d3;
+  padding: 3px 7px 3px 7px;
+}
+
+#winner {
+  margin-right: 25px;
+}
+
+/*styles for map and legend*/
 #map {
-  padding-top: 50px;
+  padding-top: 60px;
 }
 
 #map-image, #legend-image {
@@ -71,16 +106,6 @@
   fill: #848484;
 }
 
-#winner {
-  background-color: #d3d3d3;
-  padding: 3px 7px 3px 7px;
-}
-
-#pct {
-  background-color: #d3d3d3;
-  padding: 3px 7px 3px 7px;
-}
-
 #map-wrapper {
   position: relative;
 }
@@ -105,8 +130,9 @@
   text-transform: uppercase;
 }
 
+/*styles for table*/
 #table {
-  font-size: 12px;
+  font-size: 13px;
   margin-top: 50px;
   margin-bottom: 100px;
   font-family: 'Poppins';
@@ -122,7 +148,7 @@
 
 .cell {
   float: left;
-  padding: 5px 0px 5px 0px;
+  padding: 5px 5px 5px 0px;
 }
 
 .head-row {
@@ -155,7 +181,7 @@
 
 @media (max-width: 992px) {
   #map {
-    padding-top: 70px;
+    padding-top: 80px;
   }
   #top-block {
     margin-left: auto;
@@ -165,9 +191,6 @@
 }
 
 @media (max-width: 768px) {
-  #map {
-    padding-top: 30px;
-  }
   #legend {
     padding-left: 25px;
     padding-right: 25px;
@@ -189,12 +212,21 @@
     font-size: 7px;
   }
   #map {
-    padding-top: 150px;
+    padding-top: 160px;
   }
 }
 
 @media (max-width: 500px) {
   .county {
     display: none;
+  }
+  #top-block {
+    margin-top: 0px;
+  }
+  #map {
+    padding-top: 210px;
+  }
+  #winner, #precincts {
+    font-size: 10px;
   }
 }

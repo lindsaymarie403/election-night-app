@@ -21,15 +21,24 @@
   </head>
 
   <body>
-    <div id="header">Early Voting Results</div>
+    <div id="header">Early Voting Results <!--change this to Election Night Results on election night--></div>
 
      <div class="container"> <!--beginning of main body section of document -->
 
        <div class="row" id="top-block">
          <div>
            <p id="title">How is Maryland voting in the 2018 governor's race?</p>
+           <p id="subtitle"><span id="early">early voting results only</span></p>
+           <!--uncomment this on election night! and comment out early voting text
            <p id="subtitle">Watch the state's votes come in</p>
+           -->
            <p id="byline">By Lindsay Huth, Capital News Service</p>
+           <div id="status-bar">
+             <div id="winner">Winner: <span class="winner-status">Undeclared</span></div>
+             <!--uncomment this on election night!
+             <div id="precincts">Precincts Reporting: <span class="state-pre" id="pct">0%</span></div>
+           -->
+           </div>
          </div>
        </div>
 
@@ -68,17 +77,17 @@
                <circle id="howard" cx="55%" cy="43%" r="2" stroke-width="3" />
                <text class="county" x="55%" y="42%">Howard</text>
 
-               <circle id="baltcounty" cx="61%" cy="33%" r="2" stroke-width="3" />
-               <text class="county" x="61%" y="32%">Baltimore Co.</text>
+               <circle id="baltcounty" cx="60%" cy="33%" r="2" stroke-width="3" />
+               <text class="county" x="60%" y="32%">Baltimore Co.</text>
 
                <circle id="baltcity" cx="62.5%" cy="40.5%" r="2" stroke-width="3" />
                <text class="county" x="63%" y="39.5%">Baltimore City</text>
 
-               <circle id="harford" cx="70%" cy="30%" r="2" stroke-width="3" />
-               <text class="county" x="70%" y="29%">Harford</text>
+               <circle id="harford" cx="68%" cy="30%" r="2" stroke-width="3" />
+               <text class="county" x="68%" y="29%">Harford</text>
 
-               <circle id="cecil" cx="77%" cy="28%" r="2" stroke-width="3" />
-               <text class="county" x="77%" y="27%">Cecil</text>
+               <circle id="cecil" cx="75%" cy="28%" r="2" stroke-width="3" />
+               <text class="county" x="75%" y="27%">Cecil</text>
 
                <circle id="pg" cx="55%" cy="59%" r="2" stroke-width="3" />
                <text class="county" x="55%" y="58%">Prince George's</text>
@@ -89,35 +98,35 @@
                <circle id="charles" cx="52%" cy="72%" r="2" stroke-width="3" />
                <text class="county" x="52%" y="71%">Charles</text>
 
-               <circle id="calvert" cx="63%" cy="69%" r="2" stroke-width="3" />
-               <text class="county" x="63%" y="68%">Calvert</text>
+               <circle id="calvert" cx="62.5%" cy="69%" r="2" stroke-width="3" />
+               <text class="county" x="62.5%" y="68%">Calvert</text>
 
                <circle id="stmary" cx="62%" cy="79%" r="2" stroke-width="3" />
                <text class="county" x="62%" y="78%">St. Mary's</text>
 
-               <circle id="kent" cx="76%" cy="41%" r="2" stroke-width="3" />
-               <text class="county" x="76%" y="40%">Kent</text>
+               <circle id="kent" cx="75%" cy="41%" r="2" stroke-width="3" />
+               <text class="county" x="75%" y="40%">Kent</text>
 
-               <circle id="queenanne" cx="77%" cy="49%" r="2" stroke-width="3" />
-               <text class="county" x="77%" y="48%">Queen Anne's</text>
+               <circle id="queenanne" cx="74%" cy="49%" r="2" stroke-width="3" />
+               <text class="county" x="74%" y="48%">Queen Anne's</text>
 
-               <circle id="caroline" cx="79%" cy="55%" r="2" stroke-width="3" />
-               <text class="county" x="79%" y="54%">Caroline</text>
+               <circle id="caroline" cx="78%" cy="55%" r="2" stroke-width="3" />
+               <text class="county" x="78%" y="54%">Caroline</text>
 
-               <circle id="talbot" cx="75%" cy="59%" r="2" stroke-width="3" />
-               <text class="county" x="75%" y="58%">Talbot</text>
+               <circle id="talbot" cx="73%" cy="59%" r="2" stroke-width="3" />
+               <text class="county" x="73%" y="58%">Talbot</text>
 
-               <circle id="dorchester" cx="78%" cy="70%" r="2" stroke-width="3" />
-               <text class="county" x="78%" y="69%">Dorchester</text>
+               <circle id="dorchester" cx="74%" cy="71%" r="2" stroke-width="3" />
+               <text class="county" x="74%" y="70%">Dorchester</text>
 
-               <circle id="wicomico" cx="86%" cy="77%" r="2" stroke-width="3" />
-               <text class="county" x="86%" y="76%">Wicomico</text>
+               <circle id="wicomico" cx="84%" cy="77%" r="2" stroke-width="3" />
+               <text class="county" x="84%" y="76%">Wicomico</text>
 
-               <circle id="somerset" cx="81%" cy="88%" r="2" stroke-width="3" />
-               <text class="county" x="81%" y="87%">Somerset</text>
+               <circle id="somerset" cx="80%" cy="86%" r="2" stroke-width="3" />
+               <text class="county" x="80%" y="85%">Somerset</text>
 
-               <circle id="worcester" cx="90%" cy="85%" r="2" stroke-width="3" />
-               <text class="county" x="90%" y="84%">Worcester</text>
+               <circle id="worcester" cx="87%" cy="85%" r="2" stroke-width="3" />
+               <text class="county" x="87%" y="84%">Worcester</text>
 
                <!--circles for legend, here because they need to be responsive at the same scale as the others-->
                <!--if we decide to do half-circles for the legend, we need this code:

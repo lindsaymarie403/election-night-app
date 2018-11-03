@@ -107,6 +107,7 @@ d3.json("Results.js", function(error, data) {
 
   svg.select("#baltcounty")
       .data(subset)
+      //.attr("r", sqrtScale(300000))
       .attr("r", sqrtScale(baltcounty_votes[0][3] + baltcounty_votes[1][3]))
       .attr("fill", circle_fill( baltcounty_votes[0][3] / (baltcounty_votes[0][3] + baltcounty_votes[1][3])));
 
@@ -290,6 +291,7 @@ function resize() {
       .attr("r", sqrtScale(baltcity_votes[0][3] + baltcity_votes[1][3]));
 
   svg.select("#baltcounty")
+      //.attr("r", sqrtScale(300000));
       .attr("r", sqrtScale(baltcounty_votes[0][3] + baltcounty_votes[1][3]));
 
   svg.select("#calvert")
