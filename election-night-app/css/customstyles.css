@@ -17,7 +17,7 @@
   position: absolute;
   margin-left: 8%;
   width: 84%;
-  width: 1000px;
+  max-width: 1000px;
 }
 
 #title {
@@ -55,6 +55,7 @@
   border-top: 1px solid #d3d3d3;
   padding-top: 25px;
   width: 100%;
+  max-width: 900px;
 }
 
 #winner, #precincts {
@@ -119,7 +120,9 @@
 }
 
 #svg-box circle {
-  opacity: 0.7;
+  opacity: 0.8;
+  stroke: white;
+  stroke-width: 0.5;
 }
 
 #svg-box text {
@@ -176,6 +179,12 @@
     position: absolute;
     margin-bottom: 0px;
     bottom: 0px;
+  }
+}
+
+@media (max-width: 1200px) {
+  #top-block {
+    margin-left: 0;
   }
 }
 
