@@ -18,18 +18,28 @@ var sqrtScale = d3.scaleSqrt()
 
 function circle_fill(d) {
       if (d > 0.833) {
-        return "#d71920";
+        return "#db2025";
       } else if (d > 0.667) {
-        return "#c6284c";
+        return "#c62752";
       } else if (d > 0.5) {
-        return "#b21e6d";
+        return "#c71a6a";
+      } else if (d == 0.5) {
+        return "#992986"
       } else if (d > 0.333) {
-        return "#6f2c87";
+        return "#562a79";
       } else if (d > 0.167) {
-        return "#464595";
+        return "#38367b";
       }
-      return "#2e3091";
+      return "#1e1d67";
     };
+
+/*here i'm working on getting the county names to move in relation to their circles
+var mont = d3.select('#montgomery');
+
+var montbounds = mont.getBoundingClientRect();
+
+console.log(montbounds);
+*/
 
 d3.json("Results.js", function(error, data) {
 
@@ -257,7 +267,7 @@ d3.json("Results.js", function(error, data) {
 
   svg.append("image")
    .attr("class", "legend-image")
-   .attr("xlink:href", "assets/legend3.png")
+   .attr("xlink:href", "assets/legend4.png")
    .attr("x", "-5")
    .attr("y", "77%")
    .attr("width", "40%")
