@@ -17,20 +17,16 @@ var sqrtScale = d3.scaleSqrt()
     .range([0, 95]);
 
 function circle_fill(d) {
-      if (d > 0.875) {
-        return "#ec1c24";
-      } else if (d > 0.75) {
-        return "#cb2542";
-      } else if (d > 0.625) {
-        return "#aa2258";
+      if (d > 0.833) {
+        return "#d71920";
+      } else if (d > 0.667) {
+        return "#c6284c";
       } else if (d > 0.5) {
-        return "#9d246e";
-      } else if (d > 0.375) {
-        return "#742b88";
-      } else if (d > 0.25) {
-        return "#5a388f";
-      } else if (d > 0.125) {
-        return "#384495";
+        return "#b21e6d";
+      } else if (d > 0.333) {
+        return "#6f2c87";
+      } else if (d > 0.167) {
+        return "#464595";
       }
       return "#2e3091";
     };
@@ -261,10 +257,10 @@ d3.json("Results.js", function(error, data) {
 
   svg.append("image")
    .attr("class", "legend-image")
-   .attr("xlink:href", "assets/legend2.png")
+   .attr("xlink:href", "assets/legend3.png")
    .attr("x", "-5")
-   .attr("y", "76%")
-   .attr("width", "42%")
+   .attr("y", "77%")
+   .attr("width", "40%")
    .attr("height", "15%");
 
 });
