@@ -33,14 +33,6 @@ function circle_fill(d) {
       return "#1e1d67";
     };
 
-/*here i'm working on getting the county names to move in relation to their circles
-var mont = d3.select('#montgomery');
-
-var montbounds = mont.getBoundingClientRect();
-
-console.log(montbounds);
-*/
-
 d3.json("Results.js", function(error, data) {
 
   var subset = data.Results.filter(function(d) { return d[2] == '2' && d[0] == '12803' || d[2] == '2' && d[0] == '12804'; });
@@ -93,7 +85,7 @@ d3.json("Results.js", function(error, data) {
 
   worcester_votes = subset.filter(function(d) { return d[1] == '24'});
 
-  console.log(allegany_votes[0][3] + allegany_votes[1][3]);
+  //console.log(allegany_votes[0][3] + allegany_votes[1][3]);
 
   // CHANGE SECOND INDECES TO 3 ON ELECTION NIGHT
   svg.select("#allegany")
@@ -217,6 +209,7 @@ d3.json("Results.js", function(error, data) {
       .attr("r", sqrtScale(worcester_votes[0][3] + worcester_votes[1][3]))
       .attr("fill", circle_fill( worcester_votes[0][3] / (worcester_votes[0][3] + worcester_votes[1][3])));
 
+  // LEGEND
   svg.append("text")
     .attr("class", "legend-title")
     .attr("x","20%")
@@ -272,6 +265,133 @@ d3.json("Results.js", function(error, data) {
    .attr("y", "77%")
    .attr("width", "40%")
    .attr("height", "15%");
+
+   // MOVE COUNTY NAMES
+   function movetext(d) {
+     if (d.width < 100) {
+       return d.y - 5;
+     } return d.y + (d.width/2);
+   }
+
+   var montbounds = svg.select('#montgomery').node().getBBox();
+
+   svg.select('#mont-text')
+      .attr("y", movetext(montbounds));
+
+   var baltcobounds = svg.select('#baltcounty').node().getBBox();
+
+   svg.select('#baltco-text')
+       .attr("y", movetext(baltcobounds));
+
+   var pgbounds = svg.select('#pg').node().getBBox();
+
+   svg.select('#pg-text')
+        .attr("y", movetext(pgbounds));
+
+   var annebounds = svg.select('#annearundel').node().getBBox();
+
+   svg.select('#anne-text')
+        .attr("y", movetext(annebounds));
+
+    var baltcitybounds = svg.select('#baltcity').node().getBBox();
+
+    svg.select('#baltcity-text')
+       .attr("y", movetext(baltcitybounds));
+
+    var fredbounds = svg.select('#frederick').node().getBBox();
+
+    svg.select('#fred-text')
+        .attr("y", movetext(fredbounds));
+
+    var carrbounds = svg.select('#carroll').node().getBBox();
+
+    svg.select('#carr-text')
+         .attr("y", movetext(carrbounds));
+
+    var harfbounds = svg.select('#harford').node().getBBox();
+
+    svg.select('#harf-text')
+         .attr("y", movetext(harfbounds));
+
+   var howbounds = svg.select('#howard').node().getBBox();
+
+   svg.select('#how-text')
+      .attr("y", movetext(howbounds));
+
+   var charbounds = svg.select('#charles').node().getBBox();
+
+   svg.select('#char-text')
+       .attr("y", movetext(charbounds));
+
+   var garrbounds = svg.select('#garrett').node().getBBox();
+
+   svg.select('#garr-text')
+        .attr("y", movetext(garrbounds));
+
+   var allegbounds = svg.select('#allegany').node().getBBox();
+
+   svg.select('#alleg-text')
+        .attr("y", movetext(allegbounds));
+
+    var washbounds = svg.select('#washington').node().getBBox();
+
+    svg.select('#wash-text')
+       .attr("y", movetext(washbounds));
+
+    var cecilbounds = svg.select('#cecil').node().getBBox();
+
+    svg.select('#cecil-text')
+        .attr("y", movetext(cecilbounds));
+
+    var calvbounds = svg.select('#calvert').node().getBBox();
+
+    svg.select('#calv-text')
+         .attr("y", movetext(calvbounds));
+
+    var stmarybounds = svg.select('#stmary').node().getBBox();
+
+    svg.select('#stmary-text')
+         .attr("y", movetext(stmarybounds));
+
+     var kentbounds = svg.select('#kent').node().getBBox();
+
+     svg.select('#kent-text')
+        .attr("y", movetext(kentbounds));
+
+     var queenbounds = svg.select('#queenanne').node().getBBox();
+
+     svg.select('#queen-text')
+         .attr("y", movetext(queenbounds));
+
+     var carobounds = svg.select('#caroline').node().getBBox();
+
+     svg.select('#caro-text')
+          .attr("y", movetext(carobounds));
+
+     var talbbounds = svg.select('#talbot').node().getBBox();
+
+     svg.select('#talb-text')
+          .attr("y", movetext(talbbounds));
+
+      var dorchbounds = svg.select('#dorchester').node().getBBox();
+
+      svg.select('#dorch-text')
+         .attr("y", movetext(dorchbounds));
+
+      var wicobounds = svg.select('#wicomico').node().getBBox();
+
+      svg.select('#wico-text')
+          .attr("y", movetext(wicobounds));
+
+      var somebounds = svg.select('#somerset').node().getBBox();
+
+      svg.select('#some-text')
+           .attr("y", movetext(somebounds));
+
+      var worcbounds = svg.select('#worcester').node().getBBox();
+
+      svg.select('#worc-text')
+           .attr("y", movetext(worcbounds));
 
 });
 
@@ -368,5 +488,133 @@ function resize() {
 
   svg.select("#legend-small")
     .attr("r", sqrtScale(25000));
+
+  function movetext(d) {
+    if (d.width < 100) {
+      return d.y - 5;
+    } return d.y + (d.width/2);
+  }
+
+  var montbounds = svg.select('#montgomery').node().getBBox();
+
+  svg.select('#mont-text')
+     .attr("y", movetext(montbounds));
+
+  var baltcobounds = svg.select('#baltcounty').node().getBBox();
+
+  svg.select('#baltco-text')
+      .attr("y", movetext(baltcobounds));
+
+  var pgbounds = svg.select('#pg').node().getBBox();
+
+  svg.select('#pg-text')
+       .attr("y", movetext(pgbounds));
+
+  var annebounds = svg.select('#annearundel').node().getBBox();
+
+  svg.select('#anne-text')
+       .attr("y", movetext(annebounds));
+
+   var baltcitybounds = svg.select('#baltcity').node().getBBox();
+
+   svg.select('#baltcity-text')
+      .attr("y", movetext(baltcitybounds));
+
+   var fredbounds = svg.select('#frederick').node().getBBox();
+
+   svg.select('#fred-text')
+       .attr("y", movetext(fredbounds));
+
+   var carrbounds = svg.select('#carroll').node().getBBox();
+
+   svg.select('#carr-text')
+        .attr("y", movetext(carrbounds));
+
+   var harfbounds = svg.select('#harford').node().getBBox();
+
+   svg.select('#harf-text')
+        .attr("y", movetext(harfbounds));
+
+  var howbounds = svg.select('#howard').node().getBBox();
+
+  svg.select('#how-text')
+     .attr("y", movetext(howbounds));
+
+  var charbounds = svg.select('#charles').node().getBBox();
+
+  svg.select('#char-text')
+      .attr("y", movetext(charbounds));
+
+  var garrbounds = svg.select('#garrett').node().getBBox();
+
+  svg.select('#garr-text')
+       .attr("y", movetext(garrbounds));
+
+  var allegbounds = svg.select('#allegany').node().getBBox();
+
+  svg.select('#alleg-text')
+       .attr("y", movetext(allegbounds));
+
+   var washbounds = svg.select('#washington').node().getBBox();
+
+   svg.select('#wash-text')
+      .attr("y", movetext(washbounds));
+
+   var cecilbounds = svg.select('#cecil').node().getBBox();
+
+   svg.select('#cecil-text')
+       .attr("y", movetext(cecilbounds));
+
+   var calvbounds = svg.select('#calvert').node().getBBox();
+
+   svg.select('#calv-text')
+        .attr("y", movetext(calvbounds));
+
+   var stmarybounds = svg.select('#stmary').node().getBBox();
+
+   svg.select('#stmary-text')
+        .attr("y", movetext(stmarybounds));
+
+    var kentbounds = svg.select('#kent').node().getBBox();
+
+    svg.select('#kent-text')
+       .attr("y", movetext(kentbounds));
+
+    var queenbounds = svg.select('#queenanne').node().getBBox();
+
+    svg.select('#queen-text')
+        .attr("y", movetext(queenbounds));
+
+    var carobounds = svg.select('#caroline').node().getBBox();
+
+    svg.select('#caro-text')
+         .attr("y", movetext(carobounds));
+
+    var talbbounds = svg.select('#talbot').node().getBBox();
+
+    svg.select('#talb-text')
+         .attr("y", movetext(talbbounds));
+
+     var dorchbounds = svg.select('#dorchester').node().getBBox();
+
+     svg.select('#dorch-text')
+        .attr("y", movetext(dorchbounds));
+
+     var wicobounds = svg.select('#wicomico').node().getBBox();
+
+     svg.select('#wico-text')
+         .attr("y", movetext(wicobounds));
+
+     var somebounds = svg.select('#somerset').node().getBBox();
+
+     svg.select('#some-text')
+          .attr("y", movetext(somebounds));
+
+     var worcbounds = svg.select('#worcester').node().getBBox();
+
+     svg.select('#worc-text')
+          .attr("y", movetext(worcbounds));
+
+
 
 };
