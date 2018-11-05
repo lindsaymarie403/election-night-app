@@ -53,25 +53,25 @@
 
 #status-bar {
   border-top: 1px solid #d3d3d3;
-  padding-top: 25px;
   width: 100%;
   max-width: 900px;
 }
 
-#winner, #precincts {
+#winner, #precincts, #update {
   float: left;
   font-family: 'Poppins';
   font-size: 12px;
   font-weight: 400;
   text-transform: uppercase;
+  padding-top: 25px;
 }
 
-.winner-status, #pct {
+.winner-status, #pct, #new-date {
   background-color: #d3d3d3;
   padding: 3px 7px 3px 7px;
 }
 
-#winner {
+#winner, #precincts {
   margin-right: 25px;
 }
 
@@ -200,7 +200,7 @@
 
 @media (max-width: 992px) {
   #map {
-    padding-top: 80px;
+    padding-top: 110px;
   }
   #top-block {
     margin-left: auto;
@@ -231,7 +231,7 @@
     font-size: 7px;
   }
   #map {
-    padding-top: 160px;
+    padding-top: 190px;
   }
 }
 
@@ -243,9 +243,25 @@
     margin-top: 0px;
   }
   #map {
-    padding-top: 210px;
+    padding-top: 220px;
   }
-  #winner, #precincts {
+  #subtitle {
+    font-size: 16px;
+  }
+  #winner, #precincts, #update {
     font-size: 10px;
+    padding-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  #map {
+    padding-top: 200px;
+  }
+}
+
+@media (max-width: 400px) {
+  #map {
+    padding-top: 250px;
   }
 }

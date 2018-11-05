@@ -33,6 +33,7 @@ function circle_fill(d) {
       return "#1e1d67";
     };
 
+// https://cnsmaryland.org/interactives/fall-2018/election-night-app/data-proxy-example/data-proxy.php
 d3.json("Results.js", function(error, data) {
 
   var subset = data.Results.filter(function(d) { return d[2] == '2' && d[0] == '12803' || d[2] == '2' && d[0] == '12804'; });
@@ -166,6 +167,7 @@ d3.json("Results.js", function(error, data) {
 
   svg.select("#montgomery")
       .data(subset)
+      //.attr("r", sqrtScale(300000))
       .attr("r", sqrtScale(montgomery_votes[0][3] + montgomery_votes[1][3]))
       .attr("fill", circle_fill( montgomery_votes[0][3] / (montgomery_votes[0][3] + montgomery_votes[1][3])));
 
@@ -454,6 +456,7 @@ function resize() {
       .attr("r", sqrtScale(kent_votes[0][3] + kent_votes[1][3]));
 
   svg.select("#montgomery")
+      //.attr("r", sqrtScale(300000));
       .attr("r", sqrtScale(montgomery_votes[0][3] + montgomery_votes[1][3]));
 
   svg.select("#pg")
