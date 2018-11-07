@@ -66,8 +66,14 @@
   padding-top: 25px;
 }
 
-.winner-status, #pct, #new-date {
+#pct, #new-date {
   background-color: #d3d3d3;
+  padding: 3px 7px 3px 7px;
+}
+
+.winner-status {
+  background-color: #db2025;
+  color: white;
   padding: 3px 7px 3px 7px;
 }
 
