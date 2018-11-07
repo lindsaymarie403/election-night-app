@@ -68,7 +68,8 @@ d3.csv("data.csv", function(error, data) {
       .text(function(d) { return d.turnout + "%"; })
        .style("text-anchor","middle")
        .attr("font-size", "11px")
-       .attr("font-family","Poppins");
+       .attr("font-family","Poppins")
+       .attr("font-weight", "600");
 
 });
 

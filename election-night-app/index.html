@@ -434,6 +434,18 @@
             } return "black";
           };
 
+      function blanks(d) {
+            if (d == "0") {
+              return "-";
+            } return "d";
+          };
+
+      function nans(d) {
+            if (isNaN(d)) {
+              return "-";
+            } return (d * 100).toFixed(1) + "%";
+          };
+
       // go get county-level results from Results.js and fill out table
 
 /*
@@ -822,17 +834,16 @@
             var precincts = data.DReporting.filter(function(d) { return d[0] == '0'; });
             var update = data.LastUpdate;
             $("#new-date").text(update);
-            console.log(update);
 
             state_votes = subset.filter(function(d) { return d[1] == '0'});
             state_jeal_pct = state_votes[1][3] / (state_votes[1][3] + state_votes[0][3]);
             state_hog_pct = state_votes[0][3] / (state_votes[1][3] + state_votes[0][3]);
             $("#state-jeal").text(state_votes[1][3].toLocaleString());
-            $("#state-jeal-pct").text( (state_jeal_pct * 100).toFixed(1) + "%")
+            $("#state-jeal-pct").text(nans(state_jeal_pct))
                                 .css("background-color", jealous_fill(state_jeal_pct))
                                 .css("color", text_color(state_jeal_pct));
             $("#state-hog").text(state_votes[0][3].toLocaleString());
-            $("#state-hog-pct").text( (state_hog_pct * 100).toFixed(1) + "%")
+            $("#state-hog-pct").text(nans(state_hog_pct))
                                 .css("background-color", hogan_fill(state_hog_pct))
                                 .css("color", text_color(state_hog_pct));
             state_precincts = precincts.filter(function(d) { return d[1] == '2'; });
@@ -842,11 +853,11 @@
             alleg_jeal_pct = allegany_votes[1][3] / (allegany_votes[1][3] + allegany_votes[0][3]);
             alleg_hog_pct = allegany_votes[0][3] / (allegany_votes[1][3] + allegany_votes[0][3]);
             $("#alleg-jeal").text(allegany_votes[1][3].toLocaleString());
-            $("#alleg-jeal-pct").text( (alleg_jeal_pct * 100).toFixed(1) + "%")
+            $("#alleg-jeal-pct").text(nans(alleg_jeal_pct))
                                 .css("background-color", jealous_fill(alleg_jeal_pct))
                                 .css("color", text_color(alleg_jeal_pct));
             $("#alleg-hog").text(allegany_votes[0][3].toLocaleString());
-            $("#alleg-hog-pct").text( (alleg_hog_pct * 100).toFixed(1) + "%")
+            $("#alleg-hog-pct").text(nans(alleg_hog_pct))
                                 .css("background-color", hogan_fill(alleg_hog_pct))
                                 .css("color", text_color(alleg_hog_pct));
             allegany_precincts = precincts.filter(function(d) { return d[1] == '3'; });
@@ -856,11 +867,11 @@
             anne_jeal_pct = annearundel_votes[1][3] / (annearundel_votes[1][3] + annearundel_votes[0][3]);
             anne_hog_pct = annearundel_votes[0][3] / (annearundel_votes[1][3] + annearundel_votes[0][3]);
             $("#anne-jeal").text(annearundel_votes[1][3].toLocaleString());
-            $("#anne-jeal-pct").text( (anne_jeal_pct * 100).toFixed(1) + "%")
+            $("#anne-jeal-pct").text( nans(anne_jeal_pct))
                                 .css("background-color", jealous_fill(anne_jeal_pct))
                                 .css("color", text_color(anne_jeal_pct));
             $("#anne-hog").text(annearundel_votes[0][3].toLocaleString());
-            $("#anne-hog-pct").text( (anne_hog_pct * 100).toFixed(1) + "%")
+            $("#anne-hog-pct").text( nans(anne_hog_pct))
                               .css("background-color", hogan_fill(anne_hog_pct))
                               .css("color", text_color(anne_hog_pct));
             annearundel_precincts = precincts.filter(function(d) { return d[1] == '4'; });
@@ -870,11 +881,11 @@
             baltcity_jeal_pct = baltcity_votes[1][3] / (baltcity_votes[1][3] + baltcity_votes[0][3]);
             baltcity_hog_pct = baltcity_votes[0][3] / (baltcity_votes[1][3] + baltcity_votes[0][3]);
             $("#baltcity-jeal").text(baltcity_votes[1][3].toLocaleString());
-            $("#baltcity-jeal-pct").text( (baltcity_jeal_pct * 100).toFixed(1) + "%")
+            $("#baltcity-jeal-pct").text( nans(baltcity_jeal_pct))
                                   .css("background-color", jealous_fill(baltcity_jeal_pct))
                                   .css("color", text_color(baltcity_jeal_pct));
             $("#baltcity-hog").text(baltcity_votes[0][3].toLocaleString());
-            $("#baltcity-hog-pct").text( (baltcity_hog_pct * 100).toFixed(1) + "%")
+            $("#baltcity-hog-pct").text( nans(baltcity_hog_pct))
                                   .css("background-color", hogan_fill(baltcity_hog_pct))
                                   .css("color", text_color(baltcity_hog_pct));
             baltcity_precincts = precincts.filter(function(d) { return d[1] == '5'; });
@@ -884,11 +895,11 @@
             baltcounty_jeal_pct = baltcounty_votes[1][3] / (baltcounty_votes[1][3] + baltcounty_votes[0][3]);
             baltcounty_hog_pct = baltcounty_votes[0][3] / (baltcounty_votes[1][3] + baltcounty_votes[0][3]);
             $("#baltcounty-jeal").text(baltcounty_votes[1][3].toLocaleString());
-            $("#baltcounty-jeal-pct").text( (baltcounty_jeal_pct * 100).toFixed(1) + "%")
+            $("#baltcounty-jeal-pct").text( nans(baltcounty_jeal_pct))
                                       .css("background-color", jealous_fill(baltcounty_jeal_pct))
                                       .css("color", text_color(baltcounty_jeal_pct));
             $("#baltcounty-hog").text(baltcounty_votes[0][3].toLocaleString());
-            $("#baltcounty-hog-pct").text( (baltcounty_hog_pct * 100).toFixed(1) + "%")
+            $("#baltcounty-hog-pct").text( nans(baltcounty_hog_pct))
                                     .css("background-color", hogan_fill(baltcounty_hog_pct))
                                     .css("color", text_color(baltcounty_hog_pct));
             baltcounty_precincts = precincts.filter(function(d) { return d[1] == '6'; });
@@ -898,11 +909,11 @@
             calv_jeal_pct = calvert_votes[1][3] / (calvert_votes[1][3] + calvert_votes[0][3]);
             calv_hog_pct = calvert_votes[0][3] / (calvert_votes[1][3] + calvert_votes[0][3]);
             $("#calv-jeal").text(calvert_votes[1][3].toLocaleString());
-            $("#calv-jeal-pct").text( (calv_jeal_pct * 100).toFixed(1) + "%")
+            $("#calv-jeal-pct").text( nans(calv_jeal_pct))
                                 .css("background-color", jealous_fill(calv_jeal_pct))
                                 .css("color", text_color(calv_jeal_pct));
             $("#calv-hog").text(calvert_votes[0][3].toLocaleString());
-            $("#calv-hog-pct").text( (calv_hog_pct * 100).toFixed(1) + "%")
+            $("#calv-hog-pct").text( nans(calv_hog_pct))
                               .css("background-color", hogan_fill(calv_hog_pct))
                               .css("color", text_color(calv_hog_pct));
             calvert_precincts = precincts.filter(function(d) { return d[1] == '7'; });
@@ -912,11 +923,11 @@
             caro_jeal_pct = caroline_votes[1][3] / (caroline_votes[1][3] + caroline_votes[0][3]);
             caro_hog_pct = caroline_votes[0][3] / (caroline_votes[1][3] + caroline_votes[0][3]);
             $("#caro-jeal").text(caroline_votes[1][3].toLocaleString());
-            $("#caro-jeal-pct").text( (caro_jeal_pct * 100).toFixed(1) + "%")
+            $("#caro-jeal-pct").text( nans(caro_jeal_pct))
                                 .css("background-color", jealous_fill(caro_jeal_pct))
                                 .css("color", text_color(caro_jeal_pct));
             $("#caro-hog").text(caroline_votes[0][3].toLocaleString());
-            $("#caro-hog-pct").text( (caro_hog_pct * 100).toFixed(1) + "%")
+            $("#caro-hog-pct").text( nans(caro_hog_pct))
                               .css("background-color", hogan_fill(caro_hog_pct))
                               .css("color", text_color(caro_hog_pct));
             caroline_precincts = precincts.filter(function(d) { return d[1] == '8'; });
@@ -926,11 +937,11 @@
             carr_jeal_pct = carroll_votes[1][3] / (carroll_votes[1][3] + carroll_votes[0][3]);
             carr_hog_pct = carroll_votes[0][3] / (carroll_votes[1][3] + carroll_votes[0][3]);
             $("#carr-jeal").text(carroll_votes[1][3].toLocaleString());
-            $("#carr-jeal-pct").text( (carr_jeal_pct * 100).toFixed(1) + "%")
+            $("#carr-jeal-pct").text( nans(carr_jeal_pct))
                               .css("background-color", jealous_fill(carr_jeal_pct))
                               .css("color", text_color(carr_jeal_pct));
             $("#carr-hog").text(carroll_votes[0][3].toLocaleString());
-            $("#carr-hog-pct").text( (carr_hog_pct * 100).toFixed(1) + "%")
+            $("#carr-hog-pct").text( nans(carr_hog_pct))
                               .css("background-color", hogan_fill(carr_hog_pct))
                               .css("color", text_color(carr_hog_pct));
             carroll_precincts = precincts.filter(function(d) { return d[1] == '9'; });
@@ -940,11 +951,11 @@
             cecil_jeal_pct = cecil_votes[1][3] / (cecil_votes[1][3] + cecil_votes[0][3]);
             cecil_hog_pct = cecil_votes[0][3] / (cecil_votes[1][3] + cecil_votes[0][3]);
             $("#cecil-jeal").text(cecil_votes[1][3].toLocaleString());
-            $("#cecil-jeal-pct").text( (cecil_jeal_pct * 100).toFixed(1) + "%")
+            $("#cecil-jeal-pct").text( nans(cecil_jeal_pct))
                                 .css("background-color", jealous_fill(cecil_jeal_pct))
                                 .css("color", text_color(cecil_jeal_pct));
             $("#cecil-hog").text(cecil_votes[0][3].toLocaleString());
-            $("#cecil-hog-pct").text( (cecil_hog_pct * 100).toFixed(1) + "%")
+            $("#cecil-hog-pct").text( nans(cecil_hog_pct))
                                 .css("background-color", hogan_fill(cecil_hog_pct))
                                 .css("color", text_color(cecil_hog_pct));
             cecil_precincts = precincts.filter(function(d) { return d[1] == '10'; });
@@ -954,11 +965,11 @@
             char_jeal_pct = charles_votes[1][3] / (charles_votes[1][3] + charles_votes[0][3]);
             char_hog_pct = charles_votes[0][3] / (charles_votes[1][3] + charles_votes[0][3]);
             $("#char-jeal").text(charles_votes[1][3].toLocaleString());
-            $("#char-jeal-pct").text( (char_jeal_pct * 100).toFixed(1) + "%")
+            $("#char-jeal-pct").text( nans(char_jeal_pct))
                                 .css("background-color", jealous_fill(char_jeal_pct))
                                 .css("color", text_color(char_jeal_pct));
             $("#char-hog").text(charles_votes[0][3].toLocaleString());
-            $("#char-hog-pct").text( (char_hog_pct * 100).toFixed(1) + "%")
+            $("#char-hog-pct").text( nans(char_hog_pct))
                               .css("background-color", hogan_fill(char_hog_pct))
                               .css("color", text_color(char_hog_pct));
             charles_precincts = precincts.filter(function(d) { return d[1] == '11'; });
@@ -968,11 +979,11 @@
             dorch_jeal_pct = dorchester_votes[1][3] / (dorchester_votes[1][3] + dorchester_votes[0][3]);
             dorch_hog_pct = dorchester_votes[0][3] / (dorchester_votes[1][3] + dorchester_votes[0][3]);
             $("#dorch-jeal").text(dorchester_votes[1][3].toLocaleString());
-            $("#dorch-jeal-pct").text( (dorch_jeal_pct * 100).toFixed(1) + "%")
+            $("#dorch-jeal-pct").text( nans(dorch_jeal_pct))
                                 .css("background-color", jealous_fill(dorch_jeal_pct))
                                 .css("color", text_color(dorch_jeal_pct));
             $("#dorch-hog").text(dorchester_votes[0][3].toLocaleString());
-            $("#dorch-hog-pct").text( (dorch_hog_pct * 100).toFixed(1) + "%")
+            $("#dorch-hog-pct").text( nans(dorch_hog_pct))
                                 .css("background-color", hogan_fill(dorch_hog_pct))
                                 .css("color", text_color(dorch_hog_pct));
             dorchester_precincts = precincts.filter(function(d) { return d[1] == '12'; });
@@ -982,11 +993,11 @@
             fred_jeal_pct = frederick_votes[1][3] / (frederick_votes[1][3] + frederick_votes[0][3]);
             fred_hog_pct = frederick_votes[0][3] / (frederick_votes[1][3] + frederick_votes[0][3]);
             $("#fred-jeal").text(frederick_votes[1][3].toLocaleString());
-            $("#fred-jeal-pct").text( (fred_jeal_pct * 100).toFixed(1) + "%")
+            $("#fred-jeal-pct").text( nans(fred_jeal_pct))
                                 .css("background-color", jealous_fill(fred_jeal_pct))
                                 .css("color", text_color(fred_jeal_pct));
             $("#fred-hog").text(frederick_votes[0][3].toLocaleString());
-            $("#fred-hog-pct").text( (fred_hog_pct * 100).toFixed(1) + "%")
+            $("#fred-hog-pct").text( nans(fred_hog_pct))
                               .css("background-color", hogan_fill(fred_hog_pct))
                               .css("color", text_color(fred_hog_pct));
             frederick_precincts = precincts.filter(function(d) { return d[1] == '13'; });
@@ -996,11 +1007,11 @@
             garr_jeal_pct = garrett_votes[1][3] / (garrett_votes[1][3] + garrett_votes[0][3]);
             garr_hog_pct = garrett_votes[0][3] / (garrett_votes[1][3] + garrett_votes[0][3]);
             $("#garr-jeal").text(garrett_votes[1][3].toLocaleString());
-            $("#garr-jeal-pct").text( (garr_jeal_pct * 100).toFixed(1) + "%")
+            $("#garr-jeal-pct").text( nans(garr_jeal_pct))
                                 .css("background-color", jealous_fill(garr_jeal_pct))
                                 .css("color", text_color(garr_jeal_pct));
             $("#garr-hog").text(garrett_votes[0][3].toLocaleString())
-            $("#garr-hog-pct").text( (garr_hog_pct * 100).toFixed(1) + "%")
+            $("#garr-hog-pct").text( nans(garr_hog_pct))
                               .css("background-color", hogan_fill(garr_hog_pct))
                               .css("color", text_color(garr_hog_pct));
             garrett_precincts = precincts.filter(function(d) { return d[1] == '14'; });
@@ -1010,11 +1021,11 @@
             harf_jeal_pct = harford_votes[1][3] / (harford_votes[1][3] + harford_votes[0][3]);
             harf_hog_pct = harford_votes[0][3] / (harford_votes[1][3] + harford_votes[0][3]);
             $("#harf-jeal").text(harford_votes[1][3].toLocaleString());
-            $("#harf-jeal-pct").text( (harf_jeal_pct * 100).toFixed(1) + "%")
+            $("#harf-jeal-pct").text( nans(harf_jeal_pct))
                                 .css("background-color", jealous_fill(harf_jeal_pct))
                                 .css("color", text_color(harf_jeal_pct));
             $("#harf-hog").text(harford_votes[0][3].toLocaleString())
-            $("#harf-hog-pct").text( (harf_hog_pct * 100).toFixed(1) + "%")
+            $("#harf-hog-pct").text( nans(harf_hog_pct))
                               .css("background-color", hogan_fill(harf_hog_pct))
                               .css("color", text_color(harf_hog_pct));
             harford_precincts = precincts.filter(function(d) { return d[1] == '15'; });
@@ -1024,11 +1035,11 @@
             how_jeal_pct = howard_votes[1][3] / (howard_votes[1][3] + howard_votes[0][3]);
             how_hog_pct = howard_votes[0][3] / (howard_votes[1][3] + howard_votes[0][3]);
             $("#how-jeal").text(howard_votes[1][3].toLocaleString());
-            $("#how-jeal-pct").text( (how_jeal_pct * 100).toFixed(1) + "%")
+            $("#how-jeal-pct").text( nans(how_jeal_pct))
                               .css("background-color", jealous_fill(how_jeal_pct))
                               .css("color", text_color(how_jeal_pct));
             $("#how-hog").text(howard_votes[0][3].toLocaleString());
-            $("#how-hog-pct").text( (how_hog_pct * 100).toFixed(1) + "%")
+            $("#how-hog-pct").text( nans(how_hog_pct))
                               .css("background-color", hogan_fill(how_hog_pct))
                               .css("color", text_color(how_hog_pct));
             howard_precincts = precincts.filter(function(d) { return d[1] == '16'; });
@@ -1038,11 +1049,11 @@
             kent_jeal_pct = kent_votes[1][3] / (kent_votes[1][3] + kent_votes[0][3]);
             kent_hog_pct = kent_votes[0][3] / (kent_votes[1][3] + kent_votes[0][3]);
             $("#kent-jeal").text(kent_votes[1][3].toLocaleString());
-            $("#kent-jeal-pct").text( (kent_jeal_pct * 100).toFixed(1) + "%")
+            $("#kent-jeal-pct").text( nans(kent_jeal_pct))
                                 .css("background-color", jealous_fill(kent_jeal_pct))
                                 .css("color", text_color(kent_jeal_pct));
             $("#kent-hog").text(kent_votes[0][3].toLocaleString());
-            $("#kent-hog-pct").text( (kent_hog_pct * 100).toFixed(1) + "%")
+            $("#kent-hog-pct").text( nans(kent_hog_pct))
                               .css("background-color", hogan_fill(kent_hog_pct))
                               .css("color", text_color(kent_hog_pct));
             kent_precincts = precincts.filter(function(d) { return d[1] == '17'; });
@@ -1052,11 +1063,11 @@
             mont_jeal_pct = montgomery_votes[1][3] / (montgomery_votes[1][3] + montgomery_votes[0][3]);
             mont_hog_pct = montgomery_votes[0][3] / (montgomery_votes[1][3] + montgomery_votes[0][3]);
             $("#mont-jeal").text(montgomery_votes[1][3].toLocaleString());
-            $("#mont-jeal-pct").text( (mont_jeal_pct * 100).toFixed(1) + "%")
+            $("#mont-jeal-pct").text( nans(mont_jeal_pct))
                                 .css("background-color", jealous_fill(mont_jeal_pct))
                                 .css("color", text_color(mont_jeal_pct));
             $("#mont-hog").text(montgomery_votes[0][3].toLocaleString());
-            $("#mont-hog-pct").text( (mont_hog_pct * 100).toFixed(1) + "%")
+            $("#mont-hog-pct").text( nans(mont_hog_pct))
                               .css("background-color", hogan_fill(mont_hog_pct))
                               .css("color", text_color(mont_hog_pct));
             montgomery_precincts = precincts.filter(function(d) { return d[1] == '18'; });
@@ -1066,11 +1077,11 @@
             pg_jeal_pct = pg_votes[1][3] / (pg_votes[1][3] + pg_votes[0][3]);
             pg_hog_pct = pg_votes[0][3] / (pg_votes[1][3] + pg_votes[0][3]);
             $("#pg-jeal").text(pg_votes[1][3].toLocaleString());
-            $("#pg-jeal-pct").text( (pg_jeal_pct * 100).toFixed(1) + "%")
+            $("#pg-jeal-pct").text( nans(pg_jeal_pct))
                               .css("background-color", jealous_fill(pg_jeal_pct))
                               .css("color", text_color(pg_jeal_pct));
             $("#pg-hog").text(pg_votes[0][3].toLocaleString());
-            $("#pg-hog-pct").text( (pg_hog_pct * 100).toFixed(1) + "%")
+            $("#pg-hog-pct").text( nans(pg_hog_pct))
                             .css("background-color", hogan_fill(pg_hog_pct))
                             .css("color", text_color(pg_hog_pct));
             pg_precincts = precincts.filter(function(d) { return d[1] == '19'; });
@@ -1080,11 +1091,11 @@
             queen_jeal_pct = queenanne_votes[1][3] / (queenanne_votes[1][3] + queenanne_votes[0][3]);
             queen_hog_pct = queenanne_votes[0][3] / (queenanne_votes[1][3] + queenanne_votes[0][3]);
             $("#queen-jeal").text(queenanne_votes[1][3].toLocaleString());
-            $("#queen-jeal-pct").text( (queen_jeal_pct * 100).toFixed(1) + "%")
+            $("#queen-jeal-pct").text( nans(queen_jeal_pct))
                                 .css("background-color", jealous_fill(queen_jeal_pct))
                                 .css("color", text_color(queen_jeal_pct));
             $("#queen-hog").text(queenanne_votes[0][3].toLocaleString());
-            $("#queen-hog-pct").text( (queen_hog_pct * 100).toFixed(1) + "%")
+            $("#queen-hog-pct").text( nans(queen_hog_pct))
                                 .css("background-color", hogan_fill(queen_hog_pct))
                                 .css("color", text_color(queen_hog_pct));
             queenanne_precincts = precincts.filter(function(d) { return d[1] == '20'; });
@@ -1094,11 +1105,11 @@
             stmary_jeal_pct = stmary_votes[1][3] / (stmary_votes[1][3] + stmary_votes[0][3]);
             stmary_hog_pct = stmary_votes[0][3] / (stmary_votes[1][3] + stmary_votes[0][3]);
             $("#stmary-jeal").text(stmary_votes[1][3].toLocaleString());
-            $("#stmary-jeal-pct").text( (stmary_jeal_pct * 100).toFixed(1) + "%")
+            $("#stmary-jeal-pct").text( nans(stmary_jeal_pct))
                                   .css("background-color", jealous_fill(stmary_jeal_pct))
                                   .css("color", text_color(stmary_jeal_pct));
             $("#stmary-hog").text(stmary_votes[0][3].toLocaleString());
-            $("#stmary-hog-pct").text( (stmary_hog_pct * 100).toFixed(1) + "%")
+            $("#stmary-hog-pct").text( nans(stmary_hog_pct))
                                 .css("background-color", hogan_fill(stmary_hog_pct))
                                 .css("color", text_color(stmary_hog_pct));
             stmary_precincts = precincts.filter(function(d) { return d[1] == '21'; });
@@ -1108,11 +1119,11 @@
             some_jeal_pct = somerset_votes[1][3] / (somerset_votes[1][3] + somerset_votes[0][3]);
             some_hog_pct = somerset_votes[0][3] / (somerset_votes[1][3] + somerset_votes[0][3]);
             $("#some-jeal").text(somerset_votes[1][3].toLocaleString());
-            $("#some-jeal-pct").text( (some_jeal_pct * 100).toFixed(1) + "%")
+            $("#some-jeal-pct").text( nans(some_jeal_pct))
                                 .css("background-color", jealous_fill(some_jeal_pct))
                                 .css("color", text_color(some_jeal_pct));
             $("#some-hog").text(somerset_votes[0][3].toLocaleString());
-            $("#some-hog-pct").text( (some_hog_pct * 100).toFixed(1) + "%")
+            $("#some-hog-pct").text( nans(some_hog_pct))
                               .css("background-color", hogan_fill(some_hog_pct))
                               .css("color", text_color(some_hog_pct));
             somerset_precincts = precincts.filter(function(d) { return d[1] == '22'; });
@@ -1122,11 +1133,11 @@
             talb_jeal_pct = talbot_votes[1][3] / (talbot_votes[1][3] + talbot_votes[0][3]);
             talb_hog_pct = talbot_votes[0][3] / (talbot_votes[1][3] + talbot_votes[0][3]);
             $("#talb-jeal").text(talbot_votes[1][3].toLocaleString());
-            $("#talb-jeal-pct").text( (talb_jeal_pct * 100).toFixed(1) + "%")
+            $("#talb-jeal-pct").text( nans(talb_jeal_pct))
                                 .css("background-color", jealous_fill(talb_jeal_pct))
                                 .css("color", text_color(talb_jeal_pct));
             $("#talb-hog").text(talbot_votes[0][3].toLocaleString());
-            $("#talb-hog-pct").text( (talb_hog_pct * 100).toFixed(1) + "%")
+            $("#talb-hog-pct").text( nans(talb_hog_pct))
                               .css("background-color", hogan_fill(talb_hog_pct))
                               .css("color", text_color(talb_hog_pct));
             talbot_precincts = precincts.filter(function(d) { return d[1] == '23'; });
@@ -1136,11 +1147,11 @@
             wash_jeal_pct = washington_votes[1][3] / (washington_votes[1][3] + washington_votes[0][3]);
             wash_hog_pct = washington_votes[0][3] / (washington_votes[1][3] + washington_votes[0][3]);
             $("#wash-jeal").text(washington_votes[1][3].toLocaleString());
-            $("#wash-jeal-pct").text( (wash_jeal_pct * 100).toFixed(1) + "%")
+            $("#wash-jeal-pct").text( nans(wash_jeal_pct))
                                 .css("background-color", jealous_fill(wash_jeal_pct))
                                 .css("color", text_color(wash_jeal_pct));
             $("#wash-hog").text(washington_votes[0][3].toLocaleString());
-            $("#wash-hog-pct").text( (wash_hog_pct * 100).toFixed(1) + "%")
+            $("#wash-hog-pct").text( nans(wash_hog_pct))
                               .css("background-color", hogan_fill(wash_hog_pct))
                               .css("color", text_color(wash_hog_pct));
             washington_precincts = precincts.filter(function(d) { return d[1] == '24'; });
@@ -1150,11 +1161,11 @@
             wico_jeal_pct = wicomico_votes[1][3] / (wicomico_votes[1][3] + wicomico_votes[0][3]);
             wico_hog_pct = wicomico_votes[0][3] / (wicomico_votes[1][3] + wicomico_votes[0][3]);
             $("#wico-jeal").text(wicomico_votes[1][3].toLocaleString());
-            $("#wico-jeal-pct").text( (wico_jeal_pct * 100).toFixed(1) + "%")
+            $("#wico-jeal-pct").text( nans(wico_jeal_pct))
                                 .css("background-color", jealous_fill(wico_jeal_pct))
                                 .css("color", text_color(wico_jeal_pct));
             $("#wico-hog").text(wicomico_votes[0][3].toLocaleString());
-            $("#wico-hog-pct").text( (wico_hog_pct * 100).toFixed(1) + "%")
+            $("#wico-hog-pct").text( nans(wico_hog_pct))
                               .css("background-color", hogan_fill(wico_hog_pct))
                               .css("color", text_color(wico_hog_pct));
             wicomico_precincts = precincts.filter(function(d) { return d[1] == '25'; });
@@ -1164,11 +1175,11 @@
             worc_jeal_pct = worcester_votes[1][3] / (worcester_votes[1][3] + worcester_votes[0][3]);
             worc_hog_pct = worcester_votes[0][3] / (worcester_votes[1][3] + worcester_votes[0][3]);
             $("#worc-jeal").text(worcester_votes[1][3].toLocaleString());
-            $("#worc-jeal-pct").text( (worc_jeal_pct * 100).toFixed(1) + "%")
+            $("#worc-jeal-pct").text( nans(worc_jeal_pct))
                                 .css("background-color", jealous_fill(worc_jeal_pct))
                                 .css("color", text_color(worc_jeal_pct));
             $("#worc-hog").text(worcester_votes[0][3].toLocaleString());
-            $("#worc-hog-pct").text( (worc_hog_pct * 100).toFixed(1) + "%")
+            $("#worc-hog-pct").text( nans(worc_hog_pct))
                               .css("background-color", hogan_fill(worc_hog_pct))
                               .css("color", text_color(worc_hog_pct));
             worcester_precincts = precincts.filter(function(d) { return d[1] == '26'; });
