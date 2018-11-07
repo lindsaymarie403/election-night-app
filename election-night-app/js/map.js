@@ -215,7 +215,7 @@ d3.json("Results.js", function(error, data) {
   svg.append("text")
     .attr("class", "legend-title")
     .attr("x","20%")
-    .attr("y", "41%")
+    .attr("y", "51%")
     .text("Vote Total")
     .style("font-family","Poppins")
     .style("font-weight", "600")
@@ -233,21 +233,21 @@ d3.json("Results.js", function(error, data) {
   svg.append("text")
     .attr("class", "legend-big-text")
     .attr("x","20%")
-    .attr("y", "47%")
+    .attr("y", "55.5%")
     .text("250K")
     .style("font-weight", "400");
 
   svg.append("text")
     .attr("class", "legend-mid-text")
     .attr("x","20%")
-    .attr("y", "52%")
+    .attr("y", "58.5%")
     .text("100K")
     .style("font-weight", "400");
 
   svg.append("text")
     .attr("class", "legend-small-text")
     .attr("x","20%")
-    .attr("y", "57%")
+    .attr("y", "62.5%")
     .text("25K")
     .style("font-weight", "400");
 
@@ -270,7 +270,7 @@ d3.json("Results.js", function(error, data) {
 
    // MOVE COUNTY NAMES
    function movetext(d) {
-     if (d.width < 100) {
+     if (d.width < 60) {
        return d.y - 5;
      } return d.y + (d.width/2);
    }
@@ -407,7 +407,7 @@ function resize() {
   //width = width - margin.left - margin.right;
 	console.log('----resize width----'+width);
 
-  sqrtScale.range([0, (width / 10)]);
+  sqrtScale.range([0, (width / 16)]);
 
   svg.select("#allegany")
       .attr("r", sqrtScale(allegany_votes[0][3] + allegany_votes[1][3]));
@@ -493,7 +493,7 @@ function resize() {
     .attr("r", sqrtScale(25000));
 
   function movetext(d) {
-    if (d.width < 100) {
+    if (d.width < 60) {
       return d.y - 5;
     } return d.y + (d.width/2);
   }
