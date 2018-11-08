@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Graphic 2</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/customstyles.css" rel="stylesheet">
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400i,700,700i|Poppins:300,400,500,600,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <style>
+
+    #container {
+    	margin-top:20px;
+    	margin-bottom:20px;
+    	padding-left:20px;
+    	padding-top:10px;
+    	padding-right:30px;
+    	padding-bottom:10px;
+    	border-left:1px solid black;
+    	border-bottom:14pt solid black;
+    	border-top:1px solid black;
+    	border-right:1px solid black;
+    	box-shadow:5px 5px 10px gainsboro;
+    	min-width: 300px;
+    	max-width: 600px;
+    	height: auto;
+    	margin-left:auto;
+    	margin-right:auto;
+    }
+
+    h1 {
+      font-family: 'Droid Serif', serif;
+    	font-weight:600;
+    	font-size:20pt;
+    	fill:#2c2c2c;
+      margin-bottom: -2px;
+    }
+
+    h2 {
+      font-family:'Poppins', sans-serif;
+      fill:grey;
+      font-weight:300;
+      font-size:12pt;
+      line-height: 14pt;
+    	margin-bottom: 0px;
+    }
+
+    h3 {
+      font-family:'Poppins', sans-serif;
+    	fill:grey;
+    	font-weight:300;
+    	font-size:8pt;
+      text-transform: uppercase;
+      margin-bottom: 0px;
+    }
+
+    h4 {
+    	font-family:'Poppins', sans-serif;
+    	fill:grey;
+    	font-weight:300;
+    	font-size:8pt;
+    	margin-top: 0px;
+    	margin-bottom: 5px;
+    }
+
+    .x-axis line, .y-axis line {
+      stroke: #3a3a3a;
+      stroke-dasharray: 5;
+    }
+
+    .x-axis text, .y-axis text {
+      font-size: 11px;
+    }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div id="container">
+    <div id="text">
+      <h1>Voter turnout increased in every county over last governor's race</h1>
+      <h3>By Lindsay Huth / Capital News Service</h3>
+      <h2>Percent change in governor's race votes</h2>
+    </div>
+    <div id="chart"></div>
+    <h4>Source: Maryland State Board of Elections. Excludes absentee ballots from 2018, which have not yet been calculated.</h4>
+
+    <script src="graphic2.js"></script>
+
+  </body>
+
+</html>
