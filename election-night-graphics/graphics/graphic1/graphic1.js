@@ -59,15 +59,14 @@ d3.csv("data.csv", function(error, data) {
     .select(".domain")
       .remove();
 
-  svg.selectAll("#county-label")
-     .data(data)
-   .enter().append("text") // Uses the enter().append() method
+  svg.append("text") // Uses the enter().append() method
      .attr("id", "county-label") // Assign a class for styling
      .attr("x", -margin.left + 10)
      .attr("y", -15)
      .text("County")
      .style("font-family","Poppins")
-     .style("font-size", "12px");
+     .style("font-size", "12px")
+     .style("font-weight", "600");
 
   svg.selectAll(".dates")
      .data(data)
