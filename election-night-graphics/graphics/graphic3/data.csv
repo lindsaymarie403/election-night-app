@@ -1,49 +1,49 @@
-County,Candidate,Pct
-Allegany,Hogan,17.1
-Allegany,Democrat,-0.3
-Anne Arundel,Hogan,24.2
-Anne Arundel,Democrat,0.1
-Baltimore City,Hogan,75.5
-Baltimore City,Democrat,0.1
-Baltimore County,Hogan,20.6
-Baltimore County,Democrat,0.1
-Calvert,Hogan,23.6
-Calvert,Democrat,-0.1
-Caroline,Hogan,28.3
-Caroline,Democrat,-0.1
-Carroll,Hogan,13.7
-Carroll,Democrat,0.1
-Cecil,Hogan,26.4
-Cecil,Democrat,0.3
-Charles,Hogan,36.0
-Charles,Democrat,0.2
-Dorchester,Hogan,19.9
-Dorchester,Democrat,-0.1
-Frederick,Hogan,35.2
-Frederick,Democrat,0.1
-Garrett,Hogan,22.2
-Garrett,Democrat,-0.3
-Harford,Hogan,17.8
-Harford,Democrat,0.1
-Howard,Hogan,41.5
-Howard,Democrat,0.2
-Kent,Hogan,21.1
-Kent,Democrat,-0.2
-Montgomery,Hogan,63.0
-Montgomery,Democrat,0.2
-Prince George's,Hogan,156.3
-Prince George's,Democrat,0.1
-Queen Anne's,Hogan,21.3
-Queen Anne's,Democrat,-0.2
-Saint Mary's,Hogan,23.3
-Saint Mary's,Democrat,0.0
-Somerset,Hogan,9.7
-Somerset,Democrat,-0.1
-Talbot,Hogan,25.8
-Talbot,Democrat,-0.2
-Washington,Hogan,28.6
-Washington,Democrat,0.0
-Wicomico,Hogan,28.5
-Wicomico,Democrat,0.1
-Worcester,Hogan,27.5
-Worcester,Democrat,-0.1
+County,Candidate,Pct,,,
+Allegany,Hogan,17.1,,,
+Allegany,Democrat,-30.8,,,
+Anne Arundel,Hogan,24.2,,,
+Anne Arundel,Democrat,9.3,,,
+Baltimore City,Hogan,75.5,,,
+Baltimore City,Democrat,6.5,,,
+Baltimore County,Hogan,20.6,,,
+Baltimore County,Democrat,10.5,,,
+Calvert,Hogan,23.6,,,
+Calvert,Democrat,-11.8,,,
+Caroline,Hogan,28.3,,,
+Caroline,Democrat,-7.0,,,
+Carroll,Hogan,13.7,,,
+Carroll,Democrat,4.7,,,
+Cecil,Hogan,26.4,,,
+Cecil,Democrat,26.4,,,
+Charles,Hogan,36,,,
+Charles,Democrat,23.1,,,
+Dorchester,Hogan,19.9,,,
+Dorchester,Democrat,-12.5,,,
+Frederick,Hogan,35.2,,,
+Frederick,Democrat,8.6,,,
+Garrett,Hogan,22.2,,,
+Garrett,Democrat,-25.2,,,
+Harford,Hogan,17.8,,,
+Harford,Democrat,13.9,,,
+Howard,Hogan,41.5,,,
+Howard,Democrat,15.2,,,
+Kent,Hogan,21.1,,,
+Kent,Democrat,-20.9,,,
+Montgomery,Hogan,63,,,
+Montgomery,Democrat,18.4,,,
+Prince George's,Hogan,156.3,,,
+Prince George's,Democrat,13.3,,,
+Queen Anne's,Hogan,21.3,,,
+Queen Anne's,Democrat,-19.6,,,
+Saint Mary's,Hogan,23.3,,,
+Saint Mary's,Democrat,0.6,,,
+Somerset,Hogan,9.7,,,
+Somerset,Democrat,-7.1,,,
+Talbot,Hogan,25.8,,,
+Talbot,Democrat,-17.7,,,
+Washington,Hogan,28.6,,,
+Washington,Democrat,-0.5,,,
+Wicomico,Hogan,28.5,,,
+Wicomico,Democrat,8.4,,,
+Worcester,Hogan,27.5,,,
+Worcester,Democrat,-8.5,,,

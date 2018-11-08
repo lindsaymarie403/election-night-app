@@ -1,7 +1,7 @@
 
-var margin = {top: 30, right: 35, bottom: 40, left: 105},
+var margin = {top: 10, right: 35, bottom: 40, left: 105},
     width = 600 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    height = 750 - margin.top - margin.bottom;
 
 var svg = d3.select("#chart").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -10,13 +10,13 @@ var svg = d3.select("#chart").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 var x = d3.scaleLinear().rangeRound([0, width]),
-    y = d3.scaleBand().rangeRound([0, height]).padding(0.35),
-    z = d3.scaleOrdinal().range(["#f04b4d", "#f5898b"]);
+    y0 = d3.scaleBand().rangeRound([0, height]),//.paddingInner(0.1),
+    y1 = d3.scaleBand().paddingInner(0).paddingOuter(0.35),
+    z = d3.scaleOrdinal().range(["#f04b4d", "#d3d3d3"]);
 
 // load data
 d3.csv("data.csv", function(d, i, columns) {
 		for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
-		d.total = t;
 		return d;
 }, function(error, data) {
 		if (error) throw error;
@@ -26,45 +26,47 @@ d3.csv("data.csv", function(d, i, columns) {
   console.log(data);
 
   x.domain([0,200000]);
-  y.domain(data.map(function(d) { return d.County; }));
-  z.domain(keys);
+  y0.domain(data.map(function(d) { return d.County; }));
+  y1.domain(keys).rangeRound([0, y0.bandwidth()]);
+  //z.domain(keys);
   //y.domain([d3.min(data, function(d) { return d.year; }), d3.max(data, function(d) { return d.year; })]);
 
   svg.append("g")
     .selectAll("g")
-    .data(d3.stack().keys(keys)(data))
+    .data(data)
     .enter().append("g")
-      .attr("class", "bar")
-      .attr("fill", function(d) { return z(d.key); })
+      .attr("transform", function(d) { return "translate(0," + y0(d.County) + ")"; })
     .selectAll("rect")
-    .data(function(d) { return d; })
+    .data(function(d) { return keys.map(function(key) { return {key: key, value: d[key]}; }); })
     .enter().append("rect")
-      .attr("x", function(d) { return x(d[0]); })
-      .attr("y", function(d) { return y(d.data.County); })
-      .attr("width", function(d) { return x(d[1]) - x(d[0]); })
-      .attr("height", y.bandwidth());
+      .attr("x", 0)
+      .attr("y", function(d) { return y1(d.key); })
+      .attr("width", function(d) { return x(d.value); })
+      .attr("height", y1.bandwidth())
+      .attr("fill", function(d) { return z(d.key); });
 
   svg.append("text")
     .data(data)
      .attr("class","label")
-     .attr("x", (function(d) { return x(0); }  ))
-     .attr("y", 5)
-     .text("Republican voters")
-      .style("text-anchor","start")
-      .attr("font-size", "10px")
-      .attr("font-family","Poppins")
-      .attr("font-weight", "600");
-
-  svg.append("text")
-    .data(data)
-     .attr("class","label2")
-     .attr("x", (function(d) { return x(142739); }  ))
-     .attr("y", 5)
+     .attr("x", 5)
+     .attr("y", 19)
      .text("Votes for Hogan")
       .style("text-anchor","start")
       .attr("font-size", "10px")
       .attr("font-family","Poppins")
-      .attr("font-weight", "600");
+      .attr("font-weight", "500")
+      .attr("fill", "white");
+
+  svg.append("text")
+    .data(data)
+     .attr("class","label2")
+     .attr("x", 5)
+     .attr("y", 36)
+     .text("Registered Republicans")
+      .style("text-anchor","start")
+      .attr("font-size", "10px")
+      .attr("font-family","Poppins")
+      .attr("font-weight", "500");
 
   svg.append("g")
       .attr("class", "x-axis")
@@ -82,25 +84,23 @@ d3.csv("data.csv", function(d, i, columns) {
     .style("font-family","Poppins")
     .style("font-size", "11px")
     .style("color", "#3a3a3a")
-    .call(d3.axisLeft(y).ticks(3).tickSize(0).tickPadding(8))
+    .call(d3.axisLeft(y0).ticks(3).tickSize(0).tickPadding(8))
     .select(".domain")
       .remove();
 
 /*
    svg.selectAll(".text")
-     .data(data)
-      .enter()
-      .append("text")
+     .data(function(d) { return keys.map(function(key) { return {key: key, value: d[key]}; }); })
+      .enter().append("text")
       .attr("class","label")
-      .attr("x", (function(d) { return x(d.pctchg) + 15; }  ))
-      .attr("y", function(d) { return y(d.data.County) + y.bandwidth()/2 + 3; })
-      .text(function(d) { return d.pctchg; })
+      .attr("x", (function(d) { return x(d.value) + 15; }  ))
+      .attr("y", function(d) { return y1(d.key) + y.bandwidth()/2 + 3; })
+      .text(function(d) { return d.value; })
        .style("text-anchor","middle")
        .attr("font-size", "10px")
        .attr("font-family","Poppins")
        .attr("font-weight", "600");
-  */
-
+*/
 });
 
 
@@ -123,16 +123,9 @@ function resize() {
       .attr('width', (width + margin.left + margin.right) + 'px');
 
   svg.selectAll("rect")
-      .attr("x", function(d) { return x(d[0]); })
-      .attr("width", function(d) { return x(d[1]) - x(d[0]); });
+      .attr("width", function(d) { return x(d.value); });
 
   svg.selectAll(".x-axis")
       .call(d3.axisBottom(x).tickValues([0,50000,100000,150000, 200000]).tickSize(0).tickPadding(8));
-
-  svg.selectAll(".label")
-      .attr("x", (function(d) { return x(0); } ));
-
-  svg.selectAll(".label2")
-      .attr("x", (function(d) { return x(142739); } ));
 
 };

@@ -17,14 +17,17 @@ var margin = {top: 10, right: 20, bottom: 50, left: 20},
     // csv loaded asynchronously
     d3.csv("data.csv", type, function(data) {
 
-      // Data is nested by country
+      // Data is nested by county
       var counties = d3.nest()
           .key(function(d) { return d.County; })
           .entries(data);
 
-      // Compute the minimum and maximum year and percent across symbols.
       x.domain(data.map(function(d) { return d.Candidate; }));
+      //y.domain([(d3.min(data, function(d) { return d.Pct; })), (d3.max(data, function(d) { return d.Pct; }))]);
+      //y.domain(d3.extent(data, function(d) { return d.Pct; })).nice();
       y.domain([0, 220]);
+
+      console.log(d3.extent(data, function(d) { return d.Pct; }));
 
       // Add an SVG element for each country, with the desired dimensions and margin.
       var svg = d3.select("#chart").selectAll("svg")
@@ -36,26 +39,31 @@ var margin = {top: 10, right: 20, bottom: 50, left: 20},
       .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-      svg.append("g")
-          .attr("class", "x axis")
-          .attr("transform", "translate(0," + height + ")")
-          .call(d3.axisBottom(x).tickSize(0).tickPadding(10));
-
-        console.log(counties);
-
       // Accessing nested data: https://groups.google.com/forum/#!topic/d3-js/kummm9mS4EA
       // data(function(d) {return d.values;})
       // this will dereference the values for nested data for each group
       svg.selectAll(".bar")
           .data(function(d) {return d.values;})
-          .enter()
-          .append("rect")
+          .enter().append("rect")
           .attr("class", "bar")
           .attr("x", function(d) { return x(d.Candidate); })
           .attr("width", x.bandwidth())
-          .attr("y", function(d) { return y(d.Pct); })
-          .attr("height", function(d) { return height - y(d.Pct); })
+          .attr("y", function(d) {
+                if (d.Pct > 0){
+                    return y(d.Pct);
+                } else {
+                    return height;
+            }
+            })
+            .attr("height", function(d) {
+              return Math.abs(y(d.Pct) - height);
+          })
           .attr("fill", function(d) {return color(d.Candidate)});
+
+      svg.append("g")
+          .attr("class", "x axis")
+          .attr("transform", "translate(0," + height + ")")
+          .call(d3.axisBottom(x).tickSize(0).tickPadding(18));
 
       svg.append("text")
         .attr("x", width /2)
@@ -72,7 +80,13 @@ var margin = {top: 10, right: 20, bottom: 50, left: 20},
           .enter().append("text")
           .attr("class","label")
           .attr("x", (function(d) { return x(d.Candidate) + x.bandwidth()/2; }  ))
-          .attr("y", function(d) { return y(d.Pct) - 5; })
+          .attr("y", function(d) {
+                if (d.Pct > 0){
+                    return y(d.Pct) - 5;
+                } else {
+                    return height - 5;
+            }
+          })
           .text(function(d) { return d.Pct + "%"; })
           .style("text-anchor","middle")
           .attr("font-size", "10px")
@@ -81,7 +95,9 @@ var margin = {top: 10, right: 20, bottom: 50, left: 20},
     });
 
     function type(d) {
-      d.percent = +d.percent;
+      d.County = d.County,
+      d.Candidate = d.Candidate,
+      d.Pct = +d.Pct;
       return d;
     };
 
